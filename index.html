@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Canvas connection testing</title>
+  
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/style.css" type="text/css"/>
+</head>
+
+<body>
+<div>
+    <p>Current User: <span id="userID"></span></p>
+
+    <p>Current Course: <span id="courseID"></span></p>
+    
+    <p>Current Week: <span id="week"></span></p>
+</div>
+
+</body>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const userID = urlParams.get('student');
+    const course = urlParams.get('course');
+    const week = urlParams.get('week');
+
+    if(userID){
+        document.getElementById("userID").innerText = userID;
+    }
+    if(course){
+        document.getElementById("courseID").innerText = course;
+    }
+    if(week){
+        document.getElementById("week").innerText = week;
+    }
+
+</script>
+
+</html>
