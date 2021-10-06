@@ -5,42 +5,189 @@
 <head>
     <title>Canvas connection testing</title>
 
-    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+    <style>
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Arial", sans-serif;
+            font-size: 18px;
+        }
+
+        .adx textarea {
+            width: 100%;
+            margin-top: 1em;
+            padding: 2em;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #303030;
+            border: none;
+            background: #eceeef;
+        }
+
+
+    </style>
 </head>
 
 <body>
     <main class="adx">
-        <div>
-            <p>Current User: <span id="userID"></span></p>
 
-            <p>Current Course: <span id="courseID"></span></p>
+            <h4>Question 1: <span id="q1"></span></h4>
 
-            <p>Current Week: <span id="week"></span></p>
-        </div>
+            <textarea id="a1" cols="60" rows="10"></textarea>
+
+            <div class="grid-4">
+                <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
+              </div>
+        
     </main>
 
 
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
 
-    const userID = urlParams.get('student');
-    const course = urlParams.get('course');
-    const week = urlParams.get('week');
+    var userID = urlParams.get('student');
+    var course = urlParams.get('course');
+    var week = urlParams.get('week');
 
-    // TODO: add in better error handling!
+    var selection, previousWeek, previousSelection;
 
-    if (userID) {
-        document.getElementById("userID").innerText = userID;
+    if (course == null) {
+        course = "defaultCourse";
     }
-    if (course) {
-        document.getElementById("courseID").innerText = course;
+
+    if (userID == null) {
+        userID = "defaultStudent";
     }
-    if (week) {
-        document.getElementById("week").innerText = week;
+
+    if (week == null) {
+        week = 1; //default to the first week for testing only
     }
+
+    // get previous week pointer
+    if(week == 6) {
+        previousWeek = 1;
+    } else if (week == 13) {
+        previousWeek = 6;
+    }
+
+
+
+    function getDeets(data) {
+        if (data[course] == null) {
+            console.log("Missing course!");
+
+            //make a new entry for the course
+            var newCourse = {};
+            var newUser = {
+                        "week1": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        },
+                        "week6": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        },
+                        "week13": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        }
+                    }
+
+            data[course] = newCourse;
+            data[course][userID] = newUser;
+            selection = data[course][userID];
+            
+
+        } else if (data[course][userID] == null) {
+            console.log("Missing student!");
+
+            var newUser = {
+                        "week1": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        },
+                        "week6": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        },
+                        "week13": {
+                            "Q1": "",
+                            "A1": "",
+                            "Q2": "",
+                            "A2": "",
+                            "Q3": "",
+                            "A3": ""
+                        }
+                    }
+
+            data[course][userID] = newUser;
+            selection = data[course][userID];
+        } else {
+            console.log("Found a course and a student");
+
+            selection = data[course][userID];
+        }
+
+        if(week != 1){
+            previousSelection = selection["week"+previousWeek];
+        }
+        console.log("DATA");
+        console.log(data);
+
+        //get the correct week
+        console.log("SELECTION MADE!");
+        selection = selection["week"+week];
+        console.log(selection);
+
+        if(previousSelection){
+            if(selection["A1"].length == 0){
+                selection["A1"] = previousSelection["A1"];
+            }
+        }
+
+        
+
+        //display the questions and if there are any saved answers, show them too
+        $("#q1").text(selection["Q1"]);
+        $("#a1").val(selection["A1"]);
+    }
+
+    function save() {
+        console.log("Saving!");
+    }
+
+    $.getJSON('data.json', function (res) {
+        const DATA = res;
+        getDeets(DATA);
+    });
 </script>
 
 </html>
