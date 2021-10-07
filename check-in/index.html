@@ -112,7 +112,7 @@
     function createNewEntry(){
         console.log("creating a new entry!");
         var newData = {
-                    "a1": "Defaults!",
+                    "a1": "",
                     "a2": "",
                     "a3": ""
                 };
@@ -178,9 +178,11 @@
         console.log("DATA");
         console.log(selection);
 
-        if (previousSelection) {
-            if (selection["a1"].length == 0) {
-                selection["a1"] = previousSelection["A1"];
+        if (prevData) {
+            console.log("Previous Checkin");
+            if (selection.a1.length == 0) {
+                console.log()
+                selection.a1 = prevData.a1;
             }
         }
 
