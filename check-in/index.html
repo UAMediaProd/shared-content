@@ -28,28 +28,57 @@
             background: #eceeef;
         }
 
-
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
     </style>
 </head>
 
 <body>
     <main class="adx">
 
-            <h4>Question 1: <span id="q1"></span></h4>
+        <h4>Question 1: <span id="q1"></span></h4>
+        <p id="info">Your answer to the previous check-in stage has been pre-filled for you below:</p>
 
-            <textarea id="a1" cols="60" rows="10"></textarea>
+        <textarea id="a1" cols="10" rows="10"></textarea>
 
-            <div class="grid-4">
-                <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
-            </div>
-        
+        <div class="grid-4">
+            <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
+        </div>
+
     </main>
 
 
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 <script>
+    // Import the functions you need from the SDKs you need
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+        databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        authDomain: "shared-content-check-in.firebaseapp.com",
+        projectId: "shared-content-check-in",
+        storageBucket: "shared-content-check-in.appspot.com",
+        messagingSenderId: "419148697202",
+        appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+</script>
+<script>
+
+    // set yo variables 
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
 
@@ -60,139 +89,108 @@
     var selection, previousWeek, previousSelection;
 
 
+    // functions
+
+    function save() {
+
+        // get value from the textbox
+
+        selection.a1 = $("#a1").val();
+        console.log("saving text results!", selection.a1);
+
+        console.log("Saving!", course, userID, selection, week);
+        console.log(firebase.database());
+        firebase.database().ref('courses/' + course + '/' + week + '/' + userID).set({
+            a1: selection.a1,
+            a2: selection.a2,
+            a3: selection.a3
+        });
+        console.log("Done?");
+
+    }
+
+    function createNewEntry(){
+        console.log("creating a new entry!");
+        var newData = {
+                    "A1": "Defaults!",
+                    "A2": "",
+                    "A3": ""
+                };
+        return newData;
+
+    }
+
+
+ 
+
+
+    //operations
+
     console.log("userID", userID);
     console.log("course", course);
 
     if (course == null) {
-        course = "30766";
+        course = "defaultCourse2";
     }
 
     if (userID == null) {
-        userID = "47944";
+        userID = "anotherStudentssssaaaa";
     }
 
     if (week == null) {
-        week = 13; //default to the first week for testing only
+        week = 1; //default to the first week for testing only
+    }
+
+    //hide the info prompt on week 1
+    if (week == 1) {
+        $("#info").css("display", "none");
     }
 
     // get previous week pointer
-    if(week == 6) {
+    if (week == 6) {
         previousWeek = 1;
     } else if (week == 13) {
         previousWeek = 6;
     }
 
+       // get data from Firebase
+       var userCourse = firebase.database().ref('courses/' + course + '/' + week + '/' + userID);
+        userCourse.once('value').then(function(snapshot){
+        var data = snapshot.val();
+        console.log("inital data", data);
 
-
-    function getDeets(data) {
-        if (data[course] == null) {
-            console.log("Missing course!");
-
-            //make a new entry for the course
-            var newCourse = {};
-            var newUser = {
-                        "week1": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        },
-                        "week6": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        },
-                        "week13": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        }
-                    }
-
-            data[course] = newCourse;
-            data[course][userID] = newUser;
-            selection = data[course][userID];
-            
-
-        } else if (data[course][userID] == null) {
-            console.log("Missing student!");
-
-            var newUser = {
-                        "week1": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        },
-                        "week6": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        },
-                        "week13": {
-                            "Q1": "",
-                            "A1": "",
-                            "Q2": "",
-                            "A2": "",
-                            "Q3": "",
-                            "A3": ""
-                        }
-                    }
-
-            data[course][userID] = newUser;
-            selection = data[course][userID];
-        } else {
+            if(data == null){
+                //nothing found, no entry at all
+               data = createNewEntry();
+            } else {
             console.log("Found a course and a student");
 
-            selection = data[course][userID];
+            selection = data;
         }
 
-        if(week != 1){
-            previousSelection = selection["week"+previousWeek];
-        }
+
+        var previous = firebase.database().ref('courses/' + course + '/' + previousWeek + '/' + userID);
+        previous.once('value').then(function(snapshot){
+        var prevData = snapshot.val();
+        console.log("previous data", prevData);
+        selection = data;
+        
         console.log("DATA");
-        console.log(data);
-
-        //get the correct week
-        console.log("SELECTION MADE!");
-        selection = selection["week"+week];
         console.log(selection);
 
-        if(previousSelection){
-            if(selection["A1"].length == 0){
-                selection["A1"] = previousSelection["A1"];
+        if (previousSelection) {
+            if (selection["a1"].length == 0) {
+                selection["a1"] = previousSelection["A1"];
             }
         }
 
-        
-
         //display the questions and if there are any saved answers, show them too
-        $("#q1").text(selection["Q1"]);
-        $("#a1").val(selection["A1"]);
-    }
+        $("#a1").val(selection["a1"]);
 
-    function save() {
-        console.log("Saving!");
-    }
+        
+        })
+        });
 
-    $.getJSON('data.json', function (res) {
-        const DATA = res;
-        console.log("res", res);
-        getDeets(DATA);
-    });
 </script>
 
 </html>
