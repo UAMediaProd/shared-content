@@ -18,7 +18,7 @@
         }
 
         .adx textarea {
-            width: 100%;
+            width: 90%;
             margin-top: 1em;
             padding: 2em;
             font-family: 'Arial', sans-serif;
@@ -91,6 +91,10 @@
 
     // functions
 
+    function showModal(type){
+        console.log(type);
+    }
+
     function save() {
 
         // get value from the textbox
@@ -100,12 +104,15 @@
 
         console.log("Saving!", course, userID, selection, week);
         console.log(firebase.database());
-        firebase.database().ref('courses/' + course + '/' + week + '/' + userID).set({
+        firebase.database().ref('courses/' + course + '/' + userID + '/' + week).set({
             a1: selection.a1,
             a2: selection.a2,
             a3: selection.a3
         });
-        console.log("Done?");
+        
+
+        
+        showModal('success');
 
     }
 
@@ -154,7 +161,7 @@
     }
 
        // get data from Firebase
-       var userCourse = firebase.database().ref('courses/' + course + '/' + week + '/' + userID);
+       var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/' + week);
         userCourse.once('value').then(function(snapshot){
         var data = snapshot.val();
         console.log("inital data", data);
@@ -169,7 +176,7 @@
         }
 
 
-        var previous = firebase.database().ref('courses/' + course + '/' + previousWeek + '/' + userID);
+        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/' + previousWeek);
         previous.once('value').then(function(snapshot){
         var prevData = snapshot.val();
         console.log("previous data", prevData);
