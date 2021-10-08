@@ -56,11 +56,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 <script>
-    // Import the functions you need from the SDKs you need
-
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
     // Your web app's Firebase configuration
     const firebaseConfig = {
         apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
@@ -77,21 +72,17 @@
     console.log(firebase);
 </script>
 <script>
-
     // set yo variables 
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
-
     var userID = urlParams.get('student');
     var course = urlParams.get('course');
     var week = urlParams.get('week');
 
     var selection, previousWeek, previousSelection;
 
-
     // functions
-
-    function showModal(type){
+    function showModal(type) {
         console.log(type);
     }
 
@@ -109,27 +100,19 @@
             a2: selection.a2,
             a3: selection.a3
         });
-        
-
-        
         showModal('success');
-
     }
 
-    function createNewEntry(){
+    function createNewEntry() {
         console.log("creating a new entry!");
         var newData = {
-                    "a1": "",
-                    "a2": "",
-                    "a3": ""
-                };
+            "a1": "",
+            "a2": "",
+            "a3": ""
+        };
         return newData;
 
     }
-
-
- 
-
 
     //operations
 
@@ -160,46 +143,44 @@
         previousWeek = 6;
     }
 
-       // get data from Firebase
-       var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/' + week);
-        userCourse.once('value').then(function(snapshot){
+    // get data from Firebase
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/' + week);
+    userCourse.once('value').then(function (snapshot) {
         var data = snapshot.val();
         console.log("inital data", data);
 
-            if(data == null){
-                //nothing found, no entry at all
-               data = createNewEntry();
-            } else {
+        if (data == null) {
+            //nothing found, no entry at all
+            data = createNewEntry();
+        } else {
             console.log("Found a course and a student");
 
             selection = data;
         }
 
-
         var previous = firebase.database().ref('courses/' + course + '/' + userID + '/' + previousWeek);
-        previous.once('value').then(function(snapshot){
-        var prevData = snapshot.val();
-        console.log("previous data", prevData);
-        selection = data;
-        
-        console.log("DATA");
-        console.log(selection);
+        previous.once('value').then(function (snapshot) {
+            var prevData = snapshot.val();
+            console.log("previous data", prevData);
+            selection = data;
 
-        if (prevData) {
-            console.log("Previous Checkin");
-            if (selection.a1.length == 0) {
-                console.log()
-                selection.a1 = prevData.a1;
+            console.log("DATA");
+            console.log(selection);
+
+            if (prevData) {
+                console.log("Previous Checkin");
+                if (selection.a1.length == 0) {
+                    console.log()
+                    selection.a1 = prevData.a1;
+                }
             }
-        }
 
-        //display the questions and if there are any saved answers, show them too
-        $("#a1").val(selection["a1"]);
+            //display the questions and if there are any saved answers, show them too
+            $("#a1").val(selection["a1"]);
 
-        
+
         })
-        });
-
+    });
 </script>
 
 </html>
