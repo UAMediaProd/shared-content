@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Shared Content - Planning</title>
+
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+    <style>
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Arial", sans-serif;
+            font-size: 18px;
+        }
+
+        .adx textarea {
+            width: 90%;
+            margin-top: 1em;
+            padding: 2em;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #303030;
+            border: none;
+            background: #eceeef;
+        }
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+
+       <p>Planning layout for weekly tasks, feedback and milestones (if possible)</p>
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script>
+    // // Your web app's Firebase configuration
+    // const firebaseConfig = {
+    //     apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+    //     databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    //     authDomain: "shared-content-check-in.firebaseapp.com",
+    //     projectId: "shared-content-check-in",
+    //     storageBucket: "shared-content-check-in.appspot.com",
+    //     messagingSenderId: "419148697202",
+    //     appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    // };
+
+    // // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig);
+    // console.log(firebase);
+</script>
+<script>
+    // set yo variables 
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var userID = urlParams.get('student');
+    var course = urlParams.get('course');
+    var week = urlParams.get('week');
+
+    var selection, previousWeek, previousSelection;
+
+    // functions
+    function showModal(type) {
+        console.log(type);
+    }
+
+    function save() {
+
+        // get value from the textbox
+
+        selection.a1 = $("#a1").val();
+        console.log("saving text results!", selection.a1);
+
+        console.log("Saving!", course, userID, selection, week);
+       
+        // firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week).set({
+        //     a1: selection.a1,
+        //     a2: selection.a2,
+        //     a3: selection.a3
+        // });
+        showModal('success');
+    }
+
+    function createNewEntry() {
+        console.log("creating a new entry!");
+        var newData = {
+
+        };
+        return newData;
+
+    }
+
+    //operations
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+    if (course == null) {
+        course = "a-course";
+    }
+
+    if (userID == null) {
+        userID = "a-student";
+    }
+
+    if (week == null) {
+        week = 1; //default to the first week for testing only
+    }
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+
+    // // get data from Firebase
+    // var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week);
+    // userCourse.once('value').then(function (snapshot) {
+    //     var data = snapshot.val();
+    //     console.log("inital data", data);
+
+    //     if (data == null) {
+    //         //nothing found, no entry at all
+    //         data = createNewEntry();
+    //     } else {
+    //         console.log("Found a course and a student");
+
+    //         selection = data;
+    //     }
+
+    //     var previous = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + previousWeek);
+    //     previous.once('value').then(function (snapshot) {
+    //         var prevData = snapshot.val();
+    //         console.log("previous data", prevData);
+    //         selection = data;
+
+    //         console.log("DATA");
+    //         console.log(selection);
+
+    //         if (prevData) {
+    //             console.log("Previous Checkin");
+    //             if (selection.a1.length == 0) {
+    //                 console.log()
+    //                 selection.a1 = prevData.a1;
+    //             }
+    //         }
+
+    //         //display the questions and if there are any saved answers, show them too
+    //         $("#a1").val(selection["a1"]);
+
+
+    //     })
+    // });
+
+    
+
+</script>
+
+</html>

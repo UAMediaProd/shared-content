@@ -95,7 +95,7 @@
 
         console.log("Saving!", course, userID, selection, week);
         console.log(firebase.database());
-        firebase.database().ref('courses/' + course + '/' + userID + '/' + week).set({
+        firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week).set({
             a1: selection.a1,
             a2: selection.a2,
             a3: selection.a3
@@ -144,7 +144,7 @@
     }
 
     // get data from Firebase
-    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/' + week);
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week);
     userCourse.once('value').then(function (snapshot) {
         var data = snapshot.val();
         console.log("inital data", data);
@@ -158,7 +158,7 @@
             selection = data;
         }
 
-        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/' + previousWeek);
+        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + previousWeek);
         previous.once('value').then(function (snapshot) {
             var prevData = snapshot.val();
             console.log("previous data", prevData);
