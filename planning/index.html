@@ -32,13 +32,125 @@
             font-size: 0.8em;
             font-style: italic;
         }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 100%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin: 1.728rem auto;
+
+        }
+
+        .activityEntry {
+            padding: 2em;
+        }
+
+        .feedbackEntry {
+            color: #052A8A;
+            padding: 1rem;
+            font-size: 1rem;
+            background: #f3f4f5;
+        }
+
+        .feedbackEntry p {
+            font-family: "made_evolve_sans_regular", sans-serif;
+        }
+
+        .milestone {
+            display: flex;
+            color: #fa6769;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2.5em;
+        }
+
+        .milestone .icon {
+            padding: 0 10px;
+            font-size: 1.2em;
+        }
+
+        .milestone .divider {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #fa6769;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+        }
+
+        .milestone .divider span {
+            background: #fff;
+            padding: 0 10px;
+            
+        }
     </style>
 </head>
 
 <body>
     <main class="adx">
 
-       <p>Planning layout for weekly tasks, feedback and milestones (if possible)</p>
+        <div class="week">
+            <h4>Week 1</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 2</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 3</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Feedback deets will go here</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Milestone Due!</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 4</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 5</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Feedback deets will go here</p>
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -87,7 +199,7 @@
         console.log("saving text results!", selection.a1);
 
         console.log("Saving!", course, userID, selection, week);
-       
+
         // firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week).set({
         //     a1: selection.a1,
         //     a2: selection.a2,
@@ -164,9 +276,6 @@
 
     //     })
     // });
-
-    
-
 </script>
 
 </html>
