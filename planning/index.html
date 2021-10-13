@@ -4,7 +4,8 @@
 
 <head>
     <title>Shared Content - Planning</title>
-
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
     <style>
         body main {
@@ -18,14 +19,14 @@
         }
 
         .adx textarea {
-            width: 90%;
+            width: 95%;
             margin-top: 1em;
             padding: 2em;
             font-family: 'Arial', sans-serif;
             font-size: 18px;
             color: #303030;
             border: none;
-            background: #eceeef;
+            background: #f9f9f9;
         }
 
         #info {
@@ -39,9 +40,8 @@
             width: 100%;
             border-radius: 0.5ch;
             border: 1px solid #d5d9dd;
-
             box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
-            margin: 1.728rem auto;
+            margin-bottom: 2.5em;
 
         }
 
@@ -50,7 +50,7 @@
         }
 
         .feedbackEntry {
-            color: #052A8A;
+            color: #005a9c;
             padding: 1rem;
             font-size: 1rem;
             background: #f3f4f5;
@@ -85,8 +85,21 @@
         .milestone .divider span {
             background: #fff;
             padding: 0 10px;
-            
+
         }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        .week h4 {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+        }
+
     </style>
 </head>
 
@@ -98,6 +111,7 @@
             <div class="activity">
                 <div class="activityEntry">
                     <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
                 </div>
 
             </div>
@@ -108,6 +122,7 @@
             <div class="activity">
                 <div class="activityEntry">
                     <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
                 </div>
 
             </div>
@@ -118,6 +133,7 @@
             <div class="activity">
                 <div class="activityEntry">
                     <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
                 </div>
                 <div class="feedbackEntry">
                     <p>Feedback deets will go here</p>
@@ -127,7 +143,7 @@
 
         <div class="milestone">
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-            <div class='divider'><span>Milestone Due!</span></div>
+            <div class='divider'><span>Assignment 1: Literature Review is Due</span></div>
         </div>
 
         <div class="week">
@@ -135,6 +151,7 @@
             <div class="activity">
                 <div class="activityEntry">
                     <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
                 </div>
 
             </div>
@@ -145,11 +162,68 @@
             <div class="activity">
                 <div class="activityEntry">
                     <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+        
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 2: Project Plan is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 6</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
                 </div>
                 <div class="feedbackEntry">
                     <p>Feedback deets will go here</p>
                 </div>
             </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 7</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 8</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 9</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="save()">Save plan</button>
         </div>
 
     </main>
@@ -193,19 +267,7 @@
 
     function save() {
 
-        // get value from the textbox
-
-        selection.a1 = $("#a1").val();
-        console.log("saving text results!", selection.a1);
-
-        console.log("Saving!", course, userID, selection, week);
-
-        // firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week).set({
-        //     a1: selection.a1,
-        //     a2: selection.a2,
-        //     a3: selection.a3
-        // });
-        showModal('success');
+       console.log("Saving!");
     }
 
     function createNewEntry() {
