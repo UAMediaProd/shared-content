@@ -106,6 +106,9 @@
 <body>
     <main class="adx">
 
+        <h1>Planning</h1>
+        <p>Description of this tool and how to use it, etc etc</p>
+
         <div class="week">
             <h4>Week 1</h4>
             <div class="activity">
@@ -168,10 +171,7 @@
             </div>
         </div>
 
-        <div class="milestone">
-            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-            <div class='divider'><span>Assignment 2: Project Plan is Due</span></div>
-        </div>
+       
 
         <div class="week">
             <h4>Week 6</h4>
@@ -197,6 +197,11 @@
             </div>
         </div>
 
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 2: Project Plan is Due</span></div>
+        </div>
+
         <div class="week">
             <h4>Week 8</h4>
             <div class="activity">
@@ -219,6 +224,66 @@
             </div>
         </div>
 
+        <div class="week">
+            <h4>Week 10</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 11</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 12</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 13</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 14</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p>Activity deets will go here</p>
+                    <textarea id="a1" cols="1" rows="1"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 3: Project is Due</span></div>
+        </div>
+
 
 
 
@@ -235,20 +300,20 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 <script>
-    // // Your web app's Firebase configuration
-    // const firebaseConfig = {
-    //     apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
-    //     databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    //     authDomain: "shared-content-check-in.firebaseapp.com",
-    //     projectId: "shared-content-check-in",
-    //     storageBucket: "shared-content-check-in.appspot.com",
-    //     messagingSenderId: "419148697202",
-    //     appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
-    // };
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+        databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        authDomain: "shared-content-check-in.firebaseapp.com",
+        projectId: "shared-content-check-in",
+        storageBucket: "shared-content-check-in.appspot.com",
+        messagingSenderId: "419148697202",
+        appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    };
 
-    // // Initialize Firebase
-    // firebase.initializeApp(firebaseConfig);
-    // console.log(firebase);
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
 </script>
 <script>
     // set yo variables 
@@ -268,13 +333,86 @@
     function save() {
 
        console.log("Saving!");
+       createNewEntry();
+
+
+
+    //    selection.a1 = $("#a1").val();
+    //     console.log("saving text results!", selection.a1);
+
+        console.log("Saving!", course, userID, selection, week);
+        console.log(firebase.database());
+        firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week).set(
+            selection
+        );
+        showModal('success');
+
+
+
+
     }
 
     function createNewEntry() {
         console.log("creating a new entry!");
         var newData = {
-
+            "week1": {
+                "content": "",
+                "feedback": "",
+            },
+            "week2": {
+                "content": "",
+                "feedback": "",
+            },
+            "week3": {
+                "content": "",
+                "feedback": "",
+            },
+            "week4": {
+                "content": "",
+                "feedback": "",
+            },
+            "week5": {
+                "content": "",
+                "feedback": "",
+            },
+            "week6": {
+                "content": "",
+                "feedback": "",
+            },
+            "week7": {
+                "content": "",
+                "feedback": "",
+            },
+            "week8": {
+                "content": "",
+                "feedback": "",
+            },
+            "week9": {
+                "content": "",
+                "feedback": "",
+            },
+            "week10": {
+                "content": "",
+                "feedback": "",
+            },
+            "week11": {
+                "content": "",
+                "feedback": "",
+            },
+            "week12": {
+                "content": "",
+                "feedback": "",
+            },
+            "week13": {
+                "content": "",
+                "feedback": "",
+            },
+            "week14": {
+                "content": "",
+                "feedback": "",
+            },
         };
+        console.log(newData);
         return newData;
 
     }
@@ -300,44 +438,43 @@
     console.log("course", course);
 
 
-    // // get data from Firebase
-    // var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week);
-    // userCourse.once('value').then(function (snapshot) {
-    //     var data = snapshot.val();
-    //     console.log("inital data", data);
+    // get data from Firebase
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week);
+    userCourse.once('value').then(function (snapshot) {
+        var data = snapshot.val();
+        console.log("inital data", data);
 
-    //     if (data == null) {
-    //         //nothing found, no entry at all
-    //         data = createNewEntry();
-    //     } else {
-    //         console.log("Found a course and a student");
+        if (data == null) {
+            //nothing found, no entry at all
+            data = createNewEntry();
+        } else {
+            console.log("Found a course and a student");
 
-    //         selection = data;
-    //     }
+            selection = data;
+        }
 
-    //     var previous = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + previousWeek);
-    //     previous.once('value').then(function (snapshot) {
-    //         var prevData = snapshot.val();
-    //         console.log("previous data", prevData);
-    //         selection = data;
+        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + previousWeek);
+        previous.once('value').then(function (snapshot) {
+            var prevData = snapshot.val();
+            console.log("previous data", prevData);
+            selection = data;
 
-    //         console.log("DATA");
-    //         console.log(selection);
+            console.log("DATA");
+            console.log(selection);
 
-    //         if (prevData) {
-    //             console.log("Previous Checkin");
-    //             if (selection.a1.length == 0) {
-    //                 console.log()
-    //                 selection.a1 = prevData.a1;
-    //             }
-    //         }
-
-    //         //display the questions and if there are any saved answers, show them too
-    //         $("#a1").val(selection["a1"]);
+            if (prevData) {
+                console.log("Previous Checkin");
+                if (selection.a1.length == 0) {
+                    console.log()
+                    selection.a1 = prevData.a1;
+                }
+            }
 
 
-    //     })
-    // });
+
+
+        })
+    });
 </script>
 
 </html>
