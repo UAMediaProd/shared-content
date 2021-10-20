@@ -18,21 +18,37 @@
             font-size: 18px;
         }
 
-        .adx textarea {
-            width: 90%;
-            margin-top: 1em;
-            padding: 2em;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            color: #303030;
-            border: none;
-            background: #eceeef;
-        }
+  
 
         #info {
             font-size: 0.8em;
             font-style: italic;
         }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 100%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+            padding: 2em;
+
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        h4 {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+        }
+
     </style>
 </head>
 
@@ -40,13 +56,15 @@
     <main class="adx">
 
         <h4>Question 1: <span id="q1"></span></h4>
-        <p id="info">Your answer to the previous check-in stage has been pre-filled for you below:</p>
+        <div class="activity">
+            <p id="info">Your answer to the previous check-in stage has been pre-filled for you below:</p>
+            <textarea id="a1" cols="10" rows="10"></textarea>
+        </div>
 
-        <textarea id="a1" cols="10" rows="10"></textarea>
-
-        <div class="grid-4">
+        <div class="centered">
             <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
         </div>
+
 
     </main>
 
@@ -159,7 +177,8 @@
             selection = data;
         }
 
-        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + previousWeek);
+        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' +
+        previousWeek);
         previous.once('value').then(function (snapshot) {
             var prevData = snapshot.val();
             console.log("previous data", prevData);
