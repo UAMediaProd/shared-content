@@ -1,0 +1,31 @@
+{
+  "name": "referencing-guide",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.2.8",
+    "@tiptap/starter-kit": "^2.0.0-beta.65",
+    "@tiptap/vue-2": "^2.0.0-beta.32",
+    "axios": "^0.21.1",
+    "Buffer": "^0.0.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-breakpoints": "^1.1.0",
+    "vue-cryptojs": "^2.1.5",
+    "vue-sweetalert2": "^4.3.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-service": "^3.3.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
