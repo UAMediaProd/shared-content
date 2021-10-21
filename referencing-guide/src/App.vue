@@ -1,13 +1,5 @@
 <template>
   <div id="app">
-    <div class="headerbar">
-      <div class="wrapper"><img src="./assets/uoa-logo.png" width="120" /></div>
-    </div>
-    <div class="secondarybar">
-      <div class="wrapper">
-        <a href="https://www.adelaide.edu.au/library/referencing-support">← Back to library</a>
-      </div>
-    </div>
     <div class="adx-direction-warning" v-if="editMode">
       <h5>Warning!</h5>
       <p>
@@ -108,12 +100,7 @@
       </div>
     </div>
 
-    <div class="footer">
-      <div class="wrapper">
-        <p>&copy; The University of Adelaide</p>
-        <img src="./assets/uoa-logo.png" width="220" style="float: right" />
-      </div>
-    </div>
+   
   </div>
 </template>
 
@@ -147,7 +134,7 @@ export default {
 
     let urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("editing") && urlParams.get("editing") == "true") {
-      //this.editMode = true;
+      this.editMode = true;
     } else {
       this.editMode = false;
     }
