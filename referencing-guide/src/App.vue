@@ -134,7 +134,7 @@ export default {
 
     let urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has("editing") && urlParams.get("editing") == "true") {
-      this.editMode = true;
+      // this.editMode = true;
     } else {
       this.editMode = false;
     }
