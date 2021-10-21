@@ -1,6 +1,8 @@
-# referencing-guide
+# UoA Harvard Referencing Guide
 
-## Project setup
+Copied from [this repository for the Library](https://github.com/UAMediaProd/referencing-guide). Separated out to allow for parallel development and versioning.
+
+### Project setup
 
 Install any dependencies.
 
