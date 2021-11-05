@@ -25,14 +25,13 @@
 <body>
 
     <main class='adx'>
-        <div class="adx-cue-left">
-
-            <p>Unsure about a particular deadline or due date? Select the date from the dropdown and hit 'Convert' to
-                give you the exact time in your local timezone.</p>
+        <div class="adx-cue-top">
             <div class="dateContainer">
-                <div class="column">
-                    <input type="datetime-local" id="dateInput" style="width: 200px;">
-                    <button class="adx-button primary convert" id="convert">Convert</button>
+                <div class="column" style="text-align: center;">
+                    <p>Unsure what time an Adelaide tutorial will occur in your local timezone?</p>
+                    <h4 style="font-size: small;">SELECT TUTORIAL DATE & TIME</h4>
+                    <input type="datetime-local" id="dateInput" style="width: 200px;"><br>
+                    <button class="adx-button primary" id="convert">Convert</button>
                 </div>
                 <div class="column" style="text-align: center;">
                     <h5 id="localDate"></h5>
@@ -59,16 +58,16 @@
             var a = moment.tz(dateValue, "Australia/Adelaide"); //replace the first date with whatever the student puts into the date time form
             //console.log(a + " the proper date format");
             var localDate = moment(a).local();
-            var d = localDate.toDate();
-            console.log(dateFormat);
+            var d = moment(localDate.toDate()).format("DD MMM MM YYYY hh:mm a");
+            var bobtest = d.substring(0, 14);
+            console.log(bobtest);
             if (dateFormat[0] != "") {
-                document.getElementById("localDate").innerHTML = d;
+                document.getElementById("localDate").innerHTML = "<i style=\"font-size: 53px\" class=\"fal fa-calendar-alt\"></i><p>Your tutorial will be held on:<h4>" + d.substring(0, 14) + "</h4>" + "<h3>"+ d.substring(15) + "</h3>" + "(" + moment.tz.guess() + ")";
             } else {
                 document.getElementById("localDate").innerHTML = "Please enter both a date and a time.";
             }
         }
     </script>
-
 
 </body>
 
