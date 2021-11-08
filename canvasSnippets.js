@@ -9,12 +9,17 @@ if ($('#injectionSite').length != 0) { //check to see if the div exists
 
     // grab the current week too? Or can we chuck that into the div?
     let currentWeek = $("#injectionSite").attr("data-week");
+    let activity = $("#injectionSite").attr("activity"); //should return either 'checkin' or 'plan'
 
     // create base url; we then build upon this with paramaters.
-
-    let BASE_URL = "https://uamediaprod.github.io/shared-content/check-in/";
+    var BASE_URL;
+    if(activity == "checkin") {
+        BASE_URL = "https://uamediaprod.github.io/shared-content/check-in/";
+    } else if (activity == "plan") {
+        BASE_URL = "https://uamediaprod.github.io/shared-content/planning/";
+    }
+        
     let param;
-
     param = "?student=" + userID + "&" + "course=" + courseID + "&" + "week=" + currentWeek;
 
     console.log(BASE_URL + param);
