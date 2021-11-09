@@ -90,7 +90,7 @@ $.get("/api/v1/courses/" + courseID + "/pages?sort=title&order=asc", function (e
             for (let i = 0; i < terms.length; i++) {
                 var termFound = $(".show-content:icontains('" + "" + terms[i] + "" + "')");
                 if (termFound.length > 0) {
-                    var newText = termFound.html().replace(new RegExp('(' + terms[i] + ')', 'i'),
+                    var newText = termFound.html().replace(new RegExp('(' + terms[i] + ')'),
                         '<span class="tooltip">$1<span class="tooltiptext">' + defs[i] + '</span></span>');
                     termFound.html(newText);
                 }
