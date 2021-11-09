@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Ethics Checklist</title>
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+    <style>
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+        }
+
+        p, h1, h2, h3, h4, h5, h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .adx-button {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .brand-midblue {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .adx-button.brand-midblue:hover {
+            background: #004c82 !important;
+        }
+
+        input, textarea {
+            font-family: "Open Sans", sans-serif !important;
+            background: #FFF !important;
+        }
+
+  
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 90%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+            padding: 2em;
+            margin: auto;
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        h4 {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        .warning {
+            display: block;
+            background: #fff6e9;
+            color: #303030;
+            font-size: unset;
+            padding: 1em;
+            margin-top: 1em;
+            font-weight: 400;
+            font-size: 1.2em;
+        }
+
+        .warning .note {
+            color: #ffa423;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+        <h1>Ethical Issues Checklist for Human Research</h1>
+        <p><strong>Are the following ethical issues applicable to your research?</strong></p>
+        <form style="max-width: 100%; margin-top: 2em;">
+         
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">The use without consent of personal information in medical research, or personal health information?
+                    <div class='hidden warning' id="q1"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q1">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q1">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Interventions and therapies: including clinical and non-clinical trials, and innovations? (NS 3.3)
+                    <div class='hidden warning' id="q2"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q2">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q2">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Human genetics? (NS 3.5)
+                    <div class='hidden warning' id="q3"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q3">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q3">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Human stem cells? (NS 3.6)?
+                    <div class='hidden warning' id="q4"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q4">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q4">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Assisted reproduction technology?
+                    <div class='hidden warning' id="q5"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q5">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q5">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Ionizing radiation (x-rays, fluoroscopy or radioisotopes)? (NS 3)
+                    <div class='hidden warning' id="q6"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q6">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q6">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Controversial topics in the community (e.g. AIDS, IVF)?
+                    <div class='hidden warning' id="q7"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q7">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q7">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Women who are pregnant and the human fetus? (NS 4.1)
+                    <div class='hidden warning' id="q8"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q8">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q8">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Children or young people under the age of 18? (NS 4.2)
+                    <div class='hidden warning' id="q9"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q9">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q9"> 
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Persons in dependent or unequal relationships e.g. between participants (line manager-staff, employer-employee) or between participants and researchers (teacher-student)? NS 4.3)
+                    <div class='hidden warning' id="q10"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q10">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q10">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">People with a cognitive impairment, an intellectual disability, or a mental illness? (NS 4.4, 4.5) 
+                    <div class='hidden warning' id="q11"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q11">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q11">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">People who may be involved in illegal activities? (NS 4.6) 
+                    <div class='hidden warning' id="q12"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q12">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q12">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Separate identification of, or focus on, Aboriginal and Torres Strait Islander peoples? (NS 4.7)
+                    <div class='hidden warning' id="q13"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q13">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q13">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Separate identification of, or focus on, other minority or culturally sensitive groups of people or their communities?
+                    <div class='hidden warning' id="q14"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q14">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q14">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Research on people living overseas (NS 4.8)?
+                    <div class='hidden warning' id="q15"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q15">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q15">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Research methods that identify participants, e.g. questionnaires, surveys, personal interviews (group or individual), focus groups, oral histories, observation and on-line research?
+                    <div class='hidden warning' id="q16"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q16">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q16">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Involves collection of data or interviews not in a public place i.e. in people’s homes?
+                    <div class='hidden warning' id="q17"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q17">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q17">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Research where the true purpose, or the collection of data itself, is concealed from participants or that participants are in any way deceived?
+                    <div class='hidden warning' id="q18"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q18">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no"  name="q18">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Any situation where the informed consent of participants cannot be given or assured e.g. observation of participants without their knowledge?
+                    <div class='hidden warning' id="q19"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes"  name="q19">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no" name="q19">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Payments or inducements other than reasonable reimbursement for travel, time spent participating in the research?
+                    <div class='hidden warning' id="q20"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes" name="q20">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no" name="q20">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+            <!-- question block/row -->
+            <div style="display:flex;gap: 20px;margin-bottom: 1em;">
+                <label style="margin-right: 2em; width: 50%;">Any perceived, possible or actual conflicts of interest e.g. where a researcher or organisation is in a commercial relationship?
+                    <div class='hidden warning' id="q21"><span class='note'>Warning:</span> this may introduce complexity to your planned research.</div>
+                </label>
+                <label class="container">
+                    Yes
+                    <input type="radio" data-ans="yes" name="q21">
+                    <span class="radioMark"></span>
+                </label>
+                <label class="container">
+                    No
+                    <input type="radio" data-ans="no" name="q21">
+                    <span class="radioMark"></span>
+                </label>
+            </div>
+
+
+           
+
+        </form>
+        
+        
+
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    // listen for radio button event
+    $('input[type=radio]').change(function(e) {
+        let answer = $(e.target).attr('data-ans');
+        let question = $(e.target).attr('name');
+        console.log(question, answer);  
+        
+        if(answer == 'yes'){
+            $('#'+question).removeClass('hidden');
+        } else {
+            $('#'+question).addClass('hidden');
+        }
+    });
+
+</script>
+
+
+</html>
