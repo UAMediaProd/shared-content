@@ -54,6 +54,8 @@ jQuery.expr[':'].icontains = function (a, i, m) {
         .indexOf(m[3].toUpperCase()) >= 0;
 };
 
+if(this.ENV.WIKI_PAGE.title != "Glossary"){
+
 var courseID = this.ENV.COURSE_ID;
 var terms = [];
 var defs = [];
@@ -82,10 +84,13 @@ $.get("/api/v1/courses/" + courseID + "/pages?sort=title&order=asc", function (e
             }
 
             // try to find the first instance of each word in `glossary` and wrap the term in tooltip HTML
+            
+            
+
             for (let i = 0; i < terms.length; i++) {
                 var termFound = $(".show-content:icontains('" + "" + terms[i] + "" + "')");
                 if (termFound.length > 0) {
-                    var newText = termFound.html().replace(new RegExp('(' + terms[i] + ')', 'i'),
+                    var newText = termFound.html().replace(new RegExp('(' + terms[i] + ')'),
                         '<span class="tooltip">$1<span class="tooltiptext">' + defs[i] + '</span></span>');
                     termFound.html(newText);
                 }
@@ -96,3 +101,4 @@ $.get("/api/v1/courses/" + courseID + "/pages?sort=title&order=asc", function (e
 
     }
 });
+}
