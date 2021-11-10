@@ -453,16 +453,14 @@
         userID = "a-student";
     }
 
-    if (week == null) {
-        week = 1; //default to the first week for testing only
-    }
+    // unlike the check-ins, we don't care about the week
 
     console.log("userID", userID);
     console.log("course", course);
 
 
     // get data from Firebase
-    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + week);
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/');
     userCourse.once('value').then(function (snapshot) {
         var data = snapshot.val();
         console.log("inital data", data);
@@ -476,27 +474,9 @@
             selection = data;
         }
 
-        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/plan/' + previousWeek);
-        previous.once('value').then(function (snapshot) {
-            var prevData = snapshot.val();
-            console.log("previous data", prevData);
-            selection = data;
+        // pre-populate the deets here. No need to have weekly snippets of it. It's going to be standalone.
 
-            console.log("DATA");
-            console.log(selection);
-
-            if (prevData) {
-                console.log("Previous Checkin");
-                if (selection.a1.length == 0) {
-                    console.log()
-                    selection.a1 = prevData.a1;
-                }
-            }
-
-
-
-
-        })
+  
     });
 </script>
 
