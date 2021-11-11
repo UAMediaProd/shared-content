@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Shared Content - Planning</title>
+    <title>Shared Content - Planning: Activity</title>
     <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
         type="image/x-icon">
     <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
@@ -320,6 +320,7 @@
                 <div class="feedbackEntry">
                     <p id="f13"></p>
                 </div>
+                
 
             </div>
         </div>
@@ -405,14 +406,11 @@
         console.log(selection);
 
         console.log("Saving!", course, userID, selection);
+        
         console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/plan/').set(
             selection
         );
-        showModal('success');
-
-
-
 
     }
 
@@ -496,9 +494,12 @@
             //nothing found, no entry at all
             data = createNewEntry();
         } else {
+
+
             console.log("Found a course and a student");
 
-            //if there is content, load it into the text boxes
+            
+            //if there is content, load it into the text boxes; data is the object from the database
             for (var i = 1; i <= 14; i++) {
                 document.getElementById("a" + i).value = data["week" + i].content;
 
