@@ -11,8 +11,7 @@
 
 
     <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 
         body main {
@@ -25,7 +24,13 @@
             font-size: 18px;
         }
 
-        p, h1, h2, h3, h4, h5, h6 {
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: "Open Sans", sans-serif;
         }
 
@@ -48,11 +53,12 @@
             background: #004c82 !important;
         }
 
-        input, textarea {
+        input,
+        textarea {
             font-family: "Open Sans", sans-serif !important;
             background: #FFF !important;
         }
-     
+
 
         #info {
             font-size: 0.8em;
@@ -79,10 +85,6 @@
             padding: 1rem;
             font-size: 1rem;
             background: #f3f4f5;
-        }
-
-        .feedbackEntry p {
-            /* font-family: "made_evolve_sans_regular", sans-serif; */
         }
 
         .milestone {
@@ -120,15 +122,28 @@
 
         .week h4 {
             font-size: 1em;
-    margin-left: 1em;
-    color: #B9C0C6;
-    margin-bottom: -21px;
-    background: #ffffff;
-    z-index: 2;
-    position: relative;
-    width: fit-content;
-    padding: 10px;
+            margin-left: 1em;
+            color: #B9C0C6;
+            margin-bottom: -21px;
+            background: #ffffff;
+            z-index: 2;
+            position: relative;
+            width: fit-content;
+            padding: 10px;
         }
+
+        .swal2-html-container {
+            font-family: "Open Sans", sans-serif !important;
+        }
+        .swal2-styled.swal2-confirm {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .swal2-styled.swal2-confirm:focus {
+            box-shadow: none !important;
+        }
+
     </style>
 </head>
 
@@ -136,16 +151,18 @@
     <main class="adx">
 
         <h1>Project Planner</h1>
-        
+
         <div class="week">
             <h4>Week 1</h4>
             <div class="activity">
-                
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a1" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -158,11 +175,13 @@
         <div class="week">
             <h4>Week 2</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a2" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -175,11 +194,13 @@
         <div class="week">
             <h4>Week 3</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a3" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -196,11 +217,13 @@
         <div class="week">
             <h4>Week 4</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a4" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -213,11 +236,13 @@
         <div class="week">
             <h4>Week 5</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a5" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -232,11 +257,13 @@
         <div class="week">
             <h4>Week 6</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a6" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -248,11 +275,13 @@
         <div class="week">
             <h4>Week 7</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a7" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -270,11 +299,13 @@
         <div class="week">
             <h4>Week 8</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a8" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -287,11 +318,13 @@
         <div class="week">
             <h4>Week 9</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a9" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -304,11 +337,13 @@
         <div class="week">
             <h4>Week 10</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a10" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -321,11 +356,13 @@
         <div class="week">
             <h4>Week 11</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a11" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -338,11 +375,13 @@
         <div class="week">
             <h4>Week 12</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a12" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -355,17 +394,19 @@
         <div class="week">
             <h4>Week 13</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a13" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
                     <p id="f13"></p>
                 </div>
-                
+
 
             </div>
         </div>
@@ -373,11 +414,13 @@
         <div class="week">
             <h4>Week 14</h4>
             <div class="activity">
-                <div class="activityEntry"><p><strong>Planning:</strong></p>
-        <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-        <p><strong>Reporting:</strong></p>
-        <p>What have you done this week? Log your progress including key achievements, delays, issues or questions.</p>
-                    
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
                     <textarea id="a14" cols="1" rows="7"></textarea>
                 </div>
                 <div class="feedbackEntry">
@@ -407,6 +450,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -435,7 +479,13 @@
 
     // functions
     function showModal(type) {
-        console.log(type);
+
+        Swal.fire(
+            'Plan saved',
+            'Your project plan has been successfully saved!',
+            'success'
+        )
+
     }
 
     function save() {
@@ -454,11 +504,13 @@
         console.log(selection);
 
         console.log("Saving!", course, userID, selection);
-        
+
         console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/plan/').set(
             selection
         );
+
+        showModal("success");
 
     }
 
@@ -546,13 +598,13 @@
 
             console.log("Found a course and a student");
 
-            
+
             //if there is content, load it into the text boxes; data is the object from the database
             for (var i = 1; i <= 14; i++) {
                 document.getElementById("a" + i).value = data["week" + i].content;
 
                 //if there is feedback, load it into the feedback box
-                if (data.feedback["week"+i].feedback != null) {
+                if (data.feedback["week" + i].feedback != null) {
                     document.getElementById("f" + i).innerHTML = data.feedback["week" + i].feedback;
                 }
             }
