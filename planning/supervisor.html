@@ -11,8 +11,7 @@
 
 
     <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 
         body main {
@@ -25,7 +24,13 @@
             font-size: 18px;
         }
 
-        p, h1, h2, h3, h4, h5, h6 {
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: "Open Sans", sans-serif;
         }
 
@@ -42,12 +47,13 @@
             background: #004c82 !important;
         }
 
-        input, textarea {
+        input,
+        textarea {
             font-family: "Open Sans", sans-serif !important;
             background: #FFF !important;
             width: 98.5% !important;
         }
-     
+
 
         #info {
             font-size: 0.8em;
@@ -76,9 +82,7 @@
             background: #f3f4f5;
         }
 
-        .feedbackEntry p {
-            /* font-family: "made_evolve_sans_regular", sans-serif; */
-        }
+
 
         .milestone {
             display: flex;
@@ -115,14 +119,27 @@
 
         .week h4 {
             font-size: 1em;
-    margin-left: 1em;
-    color: #B9C0C6;
-    margin-bottom: -21px;
-    background: #ffffff;
-    z-index: 2;
-    position: relative;
-    width: fit-content;
-    padding: 10px;
+            margin-left: 1em;
+            color: #B9C0C6;
+            margin-bottom: -21px;
+            background: #ffffff;
+            z-index: 2;
+            position: relative;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        .swal2-html-container {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .swal2-styled.swal2-confirm {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .swal2-styled.swal2-confirm:focus {
+            box-shadow: none !important;
         }
     </style>
 </head>
@@ -137,10 +154,11 @@
             <h4>Week 1</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w1"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f1" cols="1" rows="7"></textarea>
                 </div>
 
@@ -151,10 +169,11 @@
             <h4>Week 2</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w2"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f2" cols="1" rows="7"></textarea>
                 </div>
 
@@ -165,10 +184,11 @@
             <h4>Week 3</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w3"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f3" cols="1" rows="7"></textarea>
                 </div>
             </div>
@@ -183,10 +203,11 @@
             <h4>Week 4</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w4"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f4" cols="1" rows="7"></textarea>
                 </div>
 
@@ -197,10 +218,11 @@
             <h4>Week 5</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w5"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f5" cols="1" rows="7"></textarea>
                 </div>
 
@@ -213,10 +235,11 @@
             <h4>Week 6</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w6"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f6" cols="1" rows="7"></textarea>
                 </div>
             </div>
@@ -226,10 +249,11 @@
             <h4>Week 7</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w7"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f7" cols="1" rows="7"></textarea>
                 </div>
 
@@ -245,10 +269,11 @@
             <h4>Week 8</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w8"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f8" cols="1" rows="7"></textarea>
                 </div>
 
@@ -259,9 +284,10 @@
             <h4>Week 9</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w9"></div>
-                    <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                    <div class="feedbackEntry">
+                        <p>Enter any feedback for this week below</p>
                         <textarea id="f9" cols="1" rows="7"></textarea>
                     </div>
                 </div>
@@ -273,11 +299,12 @@
             <h4>Week 10</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w10"></div>
-                    
+
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f10" cols="1" rows="7"></textarea>
                 </div>
 
@@ -288,10 +315,11 @@
             <h4>Week 11</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w11"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f11" cols="1" rows="7"></textarea>
                 </div>
 
@@ -302,11 +330,12 @@
             <h4>Week 12</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w12"></div>
-                    
+
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f12" cols="1" rows="7"></textarea>
                 </div>
 
@@ -317,10 +346,11 @@
             <h4>Week 13</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w13"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f13" cols="1" rows="7"></textarea>
                 </div>
 
@@ -331,10 +361,11 @@
             <h4>Week 14</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    
+
                     <div id="w14"></div>
                 </div>
-                <div class="feedbackEntry"><p>Enter any feedback for this week below</p>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
                     <textarea id="f14" cols="1" rows="7"></textarea>
                 </div>
 
@@ -361,6 +392,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -389,13 +421,19 @@
 
     // functions
     function showModal(type) {
-        console.log(type);
+
+        Swal.fire(
+            'Feedback saved',
+            'Your project plan feedback has been successfully saved!',
+            'success'
+        )
+
     }
 
     function save() {
 
         console.log("Saving!");
-        
+
         //loop through the feedback boxes and push to selection array
         selection = {};
         for (var i = 1; i <= 14; i++) {
@@ -405,7 +443,7 @@
                 hidden: false
             }
             selection["week" + i] = obj;
-            
+
         }
         console.log(selection);
 
@@ -449,12 +487,12 @@
 
         if (data == null) {
             //nothing found, no entry at all; show an error?
-            
+
         } else {
             console.log("Found a course and a student");
 
             // update the UI with the answers from the student; `data` is the returned object from the database
-            for(var i = 1; i <= 14; i++){
+            for (var i = 1; i <= 14; i++) {
                 var week = "week" + i;
                 var content = data[week].content;
                 $("#w" + i).html(content);
