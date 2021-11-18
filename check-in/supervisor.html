@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Shared Content - Reflection</title>
+    <title>Shared Content - Reflection: Supervisor View</title>
     <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
         type="image/x-icon">
     <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
@@ -38,6 +38,7 @@
         input, textarea {
             font-family: "Open Sans", sans-serif !important;
             background: #FFF !important;
+            width: 98.5% !important;
         }
 
   
@@ -100,18 +101,18 @@
         <div class="activity">
             <div class="activityEntry">
             <h4>Question 1: <span id="q1">Reflect on a thing</span></h4>
-            <p id="info">Your answer to the previous check-in stage has been pre-filled for you below:</p>
-            <textarea id="a1" cols="10" rows="10"></textarea>
+        
+            <div id="a1"></div>
         </div>
             <div class="feedbackEntry">
-                <p><strong>Any feedback from your supervisor will be displayed below:</strong></p>
-                <p id="f1"></p>
+                <p>Enter any feedback for the student below</p>
+                <textarea id="f1" cols="1" rows="7"></textarea>
             </div>
         </div>
         
 
         <div class="centered">
-            <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
+            <button class="adx-button brand-midblue" onclick="save()">Save feedback</button>
         </div>
 
 
@@ -154,18 +155,18 @@
     function showModal(type) {
         console.log(type);
         Swal.fire(
-            'Reflection saved',
-            'Your reflection response has been successfully saved!',
+            'Feedback saved',
+            'Your reflection feedback has been successfully saved!',
             'success'
         )
     }
 
     function save() {
-
+        console.log("saving");
         // get value from the textbox
-
-        selection.a1 = $("#a1").val();
-        console.log("saving text results!", selection.a1);
+        console.log(selection);
+        selection.feedback = $("#f1").val();
+        console.log("saving text results!", selection.feedback);
 
         console.log("Saving!", course, userID, selection, week);
         console.log(firebase.database());
@@ -180,7 +181,7 @@
         console.log("creating a new entry!");
         var newData = {
             "a1": "",
-            "feedback": ""
+            "feedback":""
         };
         return newData;
 
@@ -249,13 +250,11 @@
             }
 
             //display the questions and if there are any saved answers, show them too
-            $("#a1").val(selection["a1"]);
-
+            $("#a1").html(selection.a1);
+            console.log(data);
             if (data.feedback != null) {
                     document.getElementById("f1").innerHTML = data.feedback;
                 }
-
-            
 
 
         })
