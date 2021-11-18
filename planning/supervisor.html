@@ -23,6 +23,9 @@
             font-family: "Open Sans", sans-serif;
             font-size: 18px;
         }
+        a {
+            color: #d40000d9;
+        }
 
         p,
         h1,
@@ -229,6 +232,10 @@
             </div>
         </div>
 
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 2: Research Proposal is Due</span></div>
+        </div>
 
 
         <div class="week">
@@ -260,10 +267,7 @@
             </div>
         </div>
 
-        <div class="milestone">
-            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-            <div class='divider'><span>Assignment 2: Project Plan is Due</span></div>
-        </div>
+  
 
         <div class="week">
             <h4>Week 8</h4>
@@ -311,6 +315,11 @@
             </div>
         </div>
 
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 3: Analysis Presentation is Due</span></div>
+        </div>
+
         <div class="week">
             <h4>Week 11</h4>
             <div class="activity">
@@ -342,6 +351,11 @@
             </div>
         </div>
 
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 4: Final Report is Due</span></div>
+        </div>
+
         <div class="week">
             <h4>Week 13</h4>
             <div class="activity">
@@ -355,6 +369,10 @@
                 </div>
 
             </div>
+        </div>
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 5: Project Presentation is Due</span></div>
         </div>
 
         <div class="week">
@@ -371,11 +389,11 @@
 
             </div>
         </div>
-
         <div class="milestone">
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-            <div class='divider'><span>Assignment 3: Project is Due</span></div>
+            <div class='divider'><span>Assignment 6: Learning Journey is Due</span></div>
         </div>
+       
 
 
 
@@ -393,6 +411,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.3/Autolinker.min.js"></script>
 <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -495,8 +514,11 @@
             for (var i = 1; i <= 14; i++) {
                 var week = "week" + i;
                 var content = data[week].content;
-                $("#w" + i).html(content);
+                var html =  Autolinker.link(content);
+                console.log(html);
+                $("#w" + i).html(html);
             }
+            
         }
     });
 </script>
