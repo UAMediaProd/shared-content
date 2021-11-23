@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Shared Content - Planning: Activity</title>
+    <title>Shared Content - Planning: Supervisor View</title>
     <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
         type="image/x-icon">
     <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
@@ -23,7 +23,6 @@
             font-family: "Open Sans", sans-serif;
             font-size: 18px;
         }
-
         a {
             color: #d40000d9;
         }
@@ -36,12 +35,6 @@
         h5,
         h6 {
             font-family: "Open Sans", sans-serif;
-        }
-
-        h2 {
-            padding-left: unset !important;
-            border: 0 !important;
-            margin-top: 2em;
         }
 
         .adx-button {
@@ -61,6 +54,7 @@
         textarea {
             font-family: "Open Sans", sans-serif !important;
             background: #FFF !important;
+            width: 98.5% !important;
         }
 
 
@@ -90,6 +84,8 @@
             font-size: 1rem;
             background: #f3f4f5;
         }
+
+
 
         .milestone {
             display: flex;
@@ -139,6 +135,7 @@
         .swal2-html-container {
             font-family: "Open Sans", sans-serif !important;
         }
+
         .swal2-styled.swal2-confirm {
             background: #005a9c !important;
             color: #fff !important;
@@ -147,30 +144,25 @@
         .swal2-styled.swal2-confirm:focus {
             box-shadow: none !important;
         }
-
     </style>
 </head>
 
 <body>
     <main class="adx">
 
-        <h1>Project Planner</h1>
+        <h1>Planning</h1>
+        <p>Description of this tool and how to use it, etc etc</p>
 
         <div class="week">
             <h4>Week 1</h4>
             <div class="activity">
-
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a1" cols="1" rows="7"></textarea>
+                    <div id="w1"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f1"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f1" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -180,16 +172,12 @@
             <h4>Week 2</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a2" cols="1" rows="7"></textarea>
+                    <div id="w2"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f2"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f2" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -199,16 +187,12 @@
             <h4>Week 3</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a3" cols="1" rows="7"></textarea>
+                    <div id="w3"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f3"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f3" cols="1" rows="7"></textarea>
                 </div>
             </div>
         </div>
@@ -222,16 +206,12 @@
             <h4>Week 4</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a4" cols="1" rows="7"></textarea>
+                    <div id="w4"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f4"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f4" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -241,41 +221,33 @@
             <h4>Week 5</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a5" cols="1" rows="7"></textarea>
+                    <div id="w5"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f5"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f5" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
         </div>
+
         <div class="milestone">
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
             <div class='divider'><span>Assignment 2: Research Proposal is Due</span></div>
         </div>
 
 
-
         <div class="week">
             <h4>Week 6</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a6" cols="1" rows="7"></textarea>
+                    <div id="w6"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f6"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f6" cols="1" rows="7"></textarea>
                 </div>
             </div>
         </div>
@@ -284,37 +256,29 @@
             <h4>Week 7</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a7" cols="1" rows="7"></textarea>
+                    <div id="w7"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f7"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f7" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
         </div>
 
-       
+  
 
         <div class="week">
             <h4>Week 8</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a8" cols="1" rows="7"></textarea>
+                    <div id="w8"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f8"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f8" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -324,16 +288,12 @@
             <h4>Week 9</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a9" cols="1" rows="7"></textarea>
-                </div>
-                <div class="feedbackEntry">
-                    <p id="f9"></p>
+                    <div id="w9"></div>
+                    <div class="feedbackEntry">
+                        <p>Enter any feedback for this week below</p>
+                        <textarea id="f9" cols="1" rows="7"></textarea>
+                    </div>
                 </div>
 
             </div>
@@ -343,16 +303,13 @@
             <h4>Week 10</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a10" cols="1" rows="7"></textarea>
+                    <div id="w10"></div>
+
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f10"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f10" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -367,16 +324,12 @@
             <h4>Week 11</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a11" cols="1" rows="7"></textarea>
+                    <div id="w11"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f11"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f11" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -386,16 +339,13 @@
             <h4>Week 12</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a12" cols="1" rows="7"></textarea>
+                    <div id="w12"></div>
+
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f12"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f12" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -410,22 +360,16 @@
             <h4>Week 13</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a13" cols="1" rows="7"></textarea>
+                    <div id="w13"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f13"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f13" cols="1" rows="7"></textarea>
                 </div>
-
 
             </div>
         </div>
-
         <div class="milestone">
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
             <div class='divider'><span>Assignment 5: Project Presentation is Due</span></div>
@@ -435,16 +379,12 @@
             <h4>Week 14</h4>
             <div class="activity">
                 <div class="activityEntry">
-                    <p><strong>Planning:</strong></p>
-                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
-                    <p><strong>Reporting:</strong></p>
-                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
-                        questions.</p>
 
-                    <textarea id="a14" cols="1" rows="7"></textarea>
+                    <div id="w14"></div>
                 </div>
                 <div class="feedbackEntry">
-                    <p id="f14"></p>
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f14" cols="1" rows="7"></textarea>
                 </div>
 
             </div>
@@ -453,13 +393,13 @@
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
             <div class='divider'><span>Assignment 6: Learning Journey is Due</span></div>
         </div>
-
+       
 
 
 
 
         <div class="centered">
-            <button class="adx-button brand-midblue" onclick="save()">Save plan</button>
+            <button class="adx-button brand-midblue" onclick="save()">Save Feedback</button>
         </div>
 
     </main>
@@ -472,7 +412,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.3/Autolinker.min.js"></script>
-
 <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -503,8 +442,8 @@
     function showModal(type) {
 
         Swal.fire(
-            'Plan saved',
-            'Your project plan has been successfully saved!',
+            'Feedback saved',
+            'Your project plan feedback has been successfully saved!',
             'success'
         )
 
@@ -513,79 +452,32 @@
     function save() {
 
         console.log("Saving!");
-        createNewEntry();
 
-        selection = data;
-
-        // loop through the week text boxes and save them to selection
+        //loop through the feedback boxes and push to selection array
+        selection = {};
         for (var i = 1; i <= 14; i++) {
-            selection["week"+i].content = document.getElementById("a" + i).value;
+            var feedback = document.getElementById("f" + i).value;
+            var obj = {
+                feedback: feedback,
+                hidden: false
+            }
+            selection["week" + i] = obj;
 
         }
-
         console.log(selection);
 
         console.log("Saving!", course, userID, selection);
-
         console.log(firebase.database());
-        firebase.database().ref('courses/' + course + '/' + userID + '/plan/').set(
+        firebase.database().ref('courses/' + course + '/' + userID + '/plan/feedback').set(
             selection
         );
+        showModal('success');
 
-        showModal("success");
 
-    }
 
-    function createNewEntry() {
-        console.log("creating a new entry!");
-        var newData = {
-            "week1": {
-                "content": "",
-            },
-            "week2": {
-                "content": "",
-            },
-            "week3": {
-                "content": "",
-            },
-            "week4": {
-                "content": "",
-            },
-            "week5": {
-                "content": "",
-            },
-            "week6": {
-                "content": "",
-            },
-            "week7": {
-                "content": "",
-            },
-            "week8": {
-                "content": "",
-            },
-            "week9": {
-                "content": "",
-            },
-            "week10": {
-                "content": "",
-            },
-            "week11": {
-                "content": "",
-            },
-            "week12": {
-                "content": "",
-            },
-            "week13": {
-                "content": "",
-            },
-            "week14": {
-                "content": "",
-            },
-        };
-        console.log(newData);
-        return newData;
 
     }
+
 
     //operations
 
@@ -613,28 +505,20 @@
         console.log("inital data", data);
 
         if (data == null) {
-            //nothing found, no entry at all
-            data = createNewEntry();
+            //nothing found, no entry at all; show an error?
+
         } else {
-
-
             console.log("Found a course and a student");
 
-
-            //if there is content, load it into the text boxes; data is the object from the database
+            // update the UI with the answers from the student; `data` is the returned object from the database
             for (var i = 1; i <= 14; i++) {
-                document.getElementById("a" + i).value = data["week" + i].content;
-
-                //if there is feedback, load it into the feedback box
-                if (data.feedback["week" + i].feedback != null) {
-                    var html =  Autolinker.link(data.feedback["week" + i].feedback);
-                    console.log(html);
-                    document.getElementById("f" + i).innerHTML = html;
-                }
+                var week = "week" + i;
+                var content = data[week].content;
+                var html =  Autolinker.link(content);
+                console.log(html);
+                $("#w" + i).html(html);
             }
-
-
-
+            
         }
     });
 </script>
