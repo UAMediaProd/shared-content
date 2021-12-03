@@ -626,12 +626,14 @@
                 document.getElementById("a" + i).value = data["week" + i].content;
 
                 //if there is feedback, load it into the feedback box
+                if(data.feedback["week" + i] != null || data.feedback["week" + i] != undefined){}
                 if (data.feedback["week" + i].feedback != null) {
                     var html =  Autolinker.link(data.feedback["week" + i].feedback);
                     console.log(html);
                     document.getElementById("f" + i).innerHTML = html;
                 }
             }
+        }
 
 
 
