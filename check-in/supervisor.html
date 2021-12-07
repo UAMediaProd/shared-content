@@ -95,7 +95,7 @@
 
 <body>
     <main class="adx">
-        <h1>Reflection</h1>
+        <h1 id="titleString">Reflection</h1>
         <p>Task to reflect every 6-ish weeks</p>
         
         <div class="activity">
@@ -148,6 +148,12 @@
     var userID = urlParams.get('student');
     var course = urlParams.get('course');
     var week = urlParams.get('week');
+
+    var name = urlParams.get('name');
+
+if (name != "null"){
+    $('#titleString').text(name + "'s Planning");
+}
 
     var selection, previousWeek, previousSelection;
 

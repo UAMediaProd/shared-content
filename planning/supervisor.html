@@ -150,7 +150,7 @@
 <body>
     <main class="adx">
 
-        <h1>Planning</h1>
+        <h1 id="titleString">Planning</h1>
         <p>Description of this tool and how to use it, etc etc</p>
 
         <div class="week">
@@ -435,6 +435,12 @@
     var userID = urlParams.get('student');
     var course = urlParams.get('course');
     var week = urlParams.get('week');
+    var name = urlParams.get('name');
+
+    if (name != "null"){
+        $('#titleString').text(name + "'s Planning");
+    }
+
 
     var selection, previousWeek, previousSelection, data;
 
