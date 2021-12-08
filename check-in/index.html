@@ -163,14 +163,11 @@
     var userID = urlParams.get('student');
     var course = urlParams.get('course');
     var week = urlParams.get('week');
-    
     $("#titleString").text("Reflection for Week " + week);
-
     var selection, previousWeek, previousSelection;
 
     // functions
     function showModal(type) {
-        console.log(type);
         Swal.fire(
             'Reflection saved',
             'Your reflection response has been successfully saved!',
@@ -179,14 +176,8 @@
     }
 
     function save() {
-
         // get value from the textbox
-
         selection.a1 = $("#a1").val();
-        console.log("saving text results!", selection.a1);
-
-        console.log("Saving!", course, userID, selection, week);
-        console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week).set({
             a1: selection.a1,
             feedback: selection.feedback
@@ -195,7 +186,6 @@
     }
 
     function createNewEntry() {
-        console.log("creating a new entry!");
         var newData = {
             "a1": "",
             "feedback": ""
@@ -205,10 +195,6 @@
     }
 
     //operations
-
-    console.log("userID", userID);
-    console.log("course", course);
-
     if (course == null) {
         course = "a-course";
     }
@@ -237,38 +223,25 @@
     var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week);
     userCourse.once('value').then(function (snapshot) {
         var data = snapshot.val();
-        console.log("inital data", data);
-
+      
         if (data == null) {
             //nothing found, no entry at all
             data = createNewEntry();
         } else {
-            console.log("Found a course and a student");
-
             selection = data;
         }
-
         var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' +
         previousWeek);
         previous.once('value').then(function (snapshot) {
             var prevData = snapshot.val();
-            console.log("previous data", prevData);
             selection = data;
-
-            console.log("DATA");
-            console.log(selection);
-
             if (prevData) {
-                console.log("Previous Checkin");
                 if (selection.a1.length == 0) {
-                    console.log()
                     selection.a1 = prevData.a1;
                 }
             }
-
             //display the questions and if there are any saved answers, show them too
             $("#a1").val(selection["a1"]);
-
             if (data.feedback != null) {
                     document.getElementById("f1").innerHTML = data.feedback;
                 }

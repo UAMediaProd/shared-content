@@ -18,7 +18,13 @@
             font-size: 18px;
         }
 
-        p, h1, h2, h3, h4, h5, h6 {
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: "Open Sans", sans-serif;
         }
 
@@ -35,13 +41,14 @@
             background: #004c82 !important;
         }
 
-        input, textarea {
+        input,
+        textarea {
             font-family: "Open Sans", sans-serif !important;
             background: #FFF !important;
             width: 98.5% !important;
         }
 
-  
+
 
         #info {
             font-size: 0.8em;
@@ -57,9 +64,11 @@
             box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
             margin-bottom: 2.5em;
         }
+
         .activityEntry {
             padding: 2em;
         }
+
         .feedbackEntry {
             color: #005a9c;
             padding: 1rem;
@@ -78,9 +87,11 @@
             margin-left: 1em;
             color: #B9C0C6;
         }
+
         .swal2-html-container {
             font-family: "Open Sans", sans-serif !important;
         }
+
         .swal2-styled.swal2-confirm {
             background: #005a9c !important;
             color: #fff !important;
@@ -89,42 +100,43 @@
         .swal2-styled.swal2-confirm:focus {
             box-shadow: none !important;
         }
-
     </style>
 </head>
 
 <body>
     <main class="adx">
         <h1 id="titleString">Reflection</h1>
-        
-        
+
+
         <div class="activity">
             <div class="activityEntry">
-                <h4>What do you feel are your strengths, weaknesses, and needs in relation to this capstone project?</h4>
+                <h4>What do you feel are your strengths, weaknesses, and needs in relation to this capstone project?
+                </h4>
                 <p>Write at least one sentence for each. </p>
-    
-                <h4>Where are you heading? What do you want to do next?  </h4>
-                <p>Consider your professional goals, gaps you may have still.  </p>
-    
+
+                <h4>Where are you heading? What do you want to do next? </h4>
+                <p>Consider your professional goals, gaps you may have still. </p>
+
                 <h4>How can you use the 14 weeks of this final course to address these?</h4>
-                <p>Develop and identify your personal/professional aims in a short list or few sentences.  </p>
-    
+                <p>Develop and identify your personal/professional aims in a short list or few sentences. </p>
+
                 <h4>What would be your personal Course Learning Outcomes for this course? </h4>
                 <p>Write up a one liner in a similar style to those in this course. </p>
-    
-                <h4>Can you use Goal Attainment Scaling to help you articulate your research project goals within this course?  </h4>
+
+                <h4>Can you use Goal Attainment Scaling to help you articulate your research project goals within this
+                    course? </h4>
                 <p>If you are using this model to support you, record your notes here. </p>
-                <br/><br/>
+                <br /><br />
                 <hr>
-                <br/>
-            <div id="a1"></div>
-        </div>
+                <br />
+                <div id="a1"></div>
+            </div>
             <div class="feedbackEntry">
                 <p>Enter any feedback for the student below</p>
                 <textarea id="f1" cols="1" rows="7"></textarea>
             </div>
         </div>
-        
+
 
         <div class="centered">
             <button class="adx-button brand-midblue" onclick="save()">Save feedback</button>
@@ -163,18 +175,16 @@
     var userID = urlParams.get('student');
     var course = urlParams.get('course');
     var week = urlParams.get('week');
-
     var name = urlParams.get('name');
 
-if (name != "null"){
-    $('#titleString').text(name + "'s Reflection: Week " + week);
-}
-
+    if (name != "null") {
+        $('#titleString').text(name + "'s Reflection: Week " + week);
+    }
     var selection, previousWeek, previousSelection;
 
     // functions
     function showModal(type) {
-        console.log(type);
+
         Swal.fire(
             'Feedback saved',
             'Your reflection feedback has been successfully saved!',
@@ -183,14 +193,8 @@ if (name != "null"){
     }
 
     function save() {
-        console.log("saving");
         // get value from the textbox
-        console.log(selection);
         selection.feedback = $("#f1").val();
-        console.log("saving text results!", selection.feedback);
-
-        console.log("Saving!", course, userID, selection, week);
-        console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week).set({
             a1: selection.a1,
             feedback: selection.feedback
@@ -199,20 +203,15 @@ if (name != "null"){
     }
 
     function createNewEntry() {
-        console.log("creating a new entry!");
         var newData = {
             "a1": "",
-            "feedback":""
+            "feedback": ""
         };
         return newData;
 
     }
 
     //operations
-
-    console.log("userID", userID);
-    console.log("course", course);
-
     if (course == null) {
         course = "a-course";
     }
@@ -241,41 +240,27 @@ if (name != "null"){
     var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week);
     userCourse.once('value').then(function (snapshot) {
         var data = snapshot.val();
-        console.log("inital data", data);
-
         if (data == null) {
             //nothing found, no entry at all
             data = createNewEntry();
         } else {
-            console.log("Found a course and a student");
-
             selection = data;
         }
-
         var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' +
-        previousWeek);
+            previousWeek);
         previous.once('value').then(function (snapshot) {
             var prevData = snapshot.val();
-            console.log("previous data", prevData);
             selection = data;
-
-            console.log("DATA");
-            console.log(selection);
-
             if (prevData) {
-                console.log("Previous Checkin");
                 if (selection.a1.length == 0) {
-                    console.log()
                     selection.a1 = prevData.a1;
                 }
             }
-
             //display the questions and if there are any saved answers, show them too
             $("#a1").html(selection.a1);
-            console.log(data);
             if (data.feedback != null) {
-                    document.getElementById("f1").innerHTML = data.feedback;
-                }
+                document.getElementById("f1").innerHTML = data.feedback;
+            }
 
 
         })
