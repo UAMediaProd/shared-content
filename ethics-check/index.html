@@ -112,11 +112,19 @@
         .buttContainer {
             text-align: center;
         }
+
+        @media print {
+            input[type="radio"]:checked+span {
+                font-weight: bold;
+            }
+        }
     </style>
 </head>
 
 <body>
     <main class="adx">
+
+        <div id="ethicsPrint">
         <h1>Ethical Issues Checklist for Human Research</h1>
 
         <p>For your research project to fit within the umbrella approval it needs to broadly satisfy these key design
@@ -296,7 +304,7 @@
                         including names, contact details, email addresses of participants etc. will be accessed for
                         purposes of recruitment. No personal information may be accessed without the consent of the
                         individual
-                        <div class='hidden warning' id="q5"><span class='note'>Warning:</span> This is a requirement to
+                        <div class='hidden warning' id="sq5"><span class='note'>Warning:</span> This is a requirement to
                             fit within the umbrella approval</div>
                     </label>
                     <label class="container">
@@ -1470,8 +1478,10 @@
 
             </form>
         </div>
-
-
+    </div>
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="printPDF()">Save Checklist</button>
+        </div>
 
     </main>
 
@@ -1479,6 +1489,9 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
 
 <script>
     // listen for radio button event
@@ -1503,6 +1516,20 @@
         }
         $("#" + model).removeClass('hidden');
     }
+
+
+    function printPDF() {
+        var opt = {
+            margin: .4,
+            
+            html2canvas:  { scale: 3, scrollY: 0 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+        var element = document.getElementById('ethicsPrint');
+        html2pdf().set(opt).from(element).save();
+
+   
+   }
 </script>
 
 
