@@ -139,6 +139,7 @@
         .swal2-html-container {
             font-family: "Open Sans", sans-serif !important;
         }
+
         .swal2-styled.swal2-confirm {
             background: #005a9c !important;
             color: #fff !important;
@@ -147,7 +148,6 @@
         .swal2-styled.swal2-confirm:focus {
             box-shadow: none !important;
         }
-
     </style>
 </head>
 
@@ -299,7 +299,7 @@
             </div>
         </div>
 
-       
+
 
         <div class="week">
             <h4>Week 8</h4>
@@ -453,14 +453,15 @@
             <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
             <div class='divider'><span>Assignment 7: Learning Journey is Due</span></div>
         </div>
-        <br/><br/><br/><br/><br/><br/>
+        <br /><br /><br /><br /><br /><br />
 
 
 
 
 
         <div class="centered">
-            <button class="adx-button brand-midblue" onclick="save()" style="position: fixed; bottom: 5%;">Save Feedback</button>
+            <button class="adx-button brand-midblue" onclick="save()" style="position: fixed; bottom: 5%;">Save
+                Feedback</button>
         </div>
 
     </main>
@@ -471,7 +472,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.3/Autolinker.min.js"></script>
 
 <script>
@@ -500,6 +501,18 @@
 
     var selection, previousWeek, previousSelection, data;
 
+
+
+    $("textarea").on('focusout', function (e) {
+        console.log("unfocused!", e.target.id, e.target.value);
+
+        localStorage.setItem(e.target.id, e.target.value);
+        console.log(localStorage);
+    });
+
+
+
+
     // functions
     function showModal(type) {
 
@@ -513,6 +526,13 @@
 
     function save() {
 
+        //clear answers from localStorage
+        for (var v = 1; v < 15; v++) {
+            var key = "a" + v;
+            var value = localStorage.removeItem(key);
+        }
+
+        console.log(localStorage);
         console.log("Saving!");
         createNewEntry();
 
@@ -520,7 +540,7 @@
 
         // loop through the week text boxes and save them to selection
         for (var i = 1; i <= 14; i++) {
-            selection["week"+i].content = document.getElementById("a" + i).value;
+            selection["week" + i].content = document.getElementById("a" + i).value;
 
         }
 
@@ -584,47 +604,47 @@
             },
             "feedback": {
                 "week1": {
-                "feedback": "",
-            },
-            "week2": {
-                "feedback": "",
-            },
-            "week3": {
-                "feedback": "",
-            },
-            "week4": {
-                "feedback": "",
-            },
-            "week5": {
-                "feedback": "",
-            },
-            "week6": {
-                "feedback": "",
-            },
-            "week7": {
-                "feedback": "",
-            },
-            "week8": {
-                "feedback": "",
-            },
-            "week9": {
-                "feedback": "",
-            },
-            "week10": {
-                "feedback": "",
-            },
-            "week11": {
-                "feedback": "",
-            },
-            "week12": {
-                "feedback": "",
-            },
-            "week13": {
-                "feedback": "",
-            },
-            "week14": {
-                "feedback": "",
-            },
+                    "feedback": "",
+                },
+                "week2": {
+                    "feedback": "",
+                },
+                "week3": {
+                    "feedback": "",
+                },
+                "week4": {
+                    "feedback": "",
+                },
+                "week5": {
+                    "feedback": "",
+                },
+                "week6": {
+                    "feedback": "",
+                },
+                "week7": {
+                    "feedback": "",
+                },
+                "week8": {
+                    "feedback": "",
+                },
+                "week9": {
+                    "feedback": "",
+                },
+                "week10": {
+                    "feedback": "",
+                },
+                "week11": {
+                    "feedback": "",
+                },
+                "week12": {
+                    "feedback": "",
+                },
+                "week13": {
+                    "feedback": "",
+                },
+                "week14": {
+                    "feedback": "",
+                },
             }
         };
         console.log(newData);
@@ -668,17 +688,63 @@
 
             //if there is content, load it into the text boxes; data is the object from the database
             for (var i = 1; i <= 14; i++) {
+
                 document.getElementById("a" + i).value = data["week" + i].content;
 
                 //if there is feedback, load it into the feedback box
-                if(data.feedback["week" + i] != null || data.feedback["week" + i] != undefined){
-                if (data.feedback["week" + i].feedback != null) {
-                    var html =  Autolinker.link(data.feedback["week" + i].feedback);
-                    console.log(html);
-                    document.getElementById("f" + i).innerHTML = html;
+                if (data.feedback["week" + i] != null || data.feedback["week" + i] != undefined) {
+                    if (data.feedback["week" + i].feedback != null) {
+                        var html = Autolinker.link(data.feedback["week" + i].feedback);
+                        console.log(html);
+                        document.getElementById("f" + i).innerHTML = html;
+                    }
                 }
+
+
+                //OVERRIDE: If there's something in the local storage, load that instead! It should only exist if someone wrote content but did not save it.
+                //Should we pop up a modal first and then use the local storage and if they confirm, they use the local storage?
+                if (localStorage.getItem("a1") != null || localStorage.getItem("a2") != null || localStorage
+                    .getItem("a3") != null || localStorage.getItem("a4") != null || localStorage.getItem(
+                    "a5") != null || localStorage.getItem("a6") != null || localStorage.getItem("a7") != null ||
+                    localStorage.getItem("a8") != null || localStorage.getItem("a9") != null || localStorage
+                    .getItem("a19") != null || localStorage.getItem("a11") != null || localStorage.getItem(
+                        "a12") != null || localStorage.getItem("a13") != null || localStorage.getItem("a14") !=
+                    null) {
+                    Swal.fire({
+                        text: 'Some unsaved changes have been detected, do you wish to continue from where you left off?',
+                        showDenyButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: 'Yes, continue',
+                        denyButtonText: `No, load my submitted information`,
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            console.log("Confirmed");
+                            for (var v = 1; v < 15; v++) {
+                                var key = "a" + v;
+                                var savedVal = localStorage.getItem(key);
+
+                                if(savedVal != null){
+                                    document.getElementById(key).value = savedVal;
+                                }
+                                
+                            }
+
+
+                        } else if (result.isDenied) {
+                            // load from the db, clear the local storage
+                            for (var v = 0; v < 15; v++) {
+                                var key = "a" + v;
+                                var value = localStorage.removeItem(key);
+                            }
+                        }
+                    })
+
+                }
+
+
+                
             }
-        }
 
 
 
