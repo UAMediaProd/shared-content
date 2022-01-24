@@ -76,6 +76,11 @@
 
         .activityEntry {
             padding: 2em;
+            font-size: 16px;
+        }
+
+        .activityEntry > div {
+            white-space: pre-line;
         }
 
         .feedbackEntry {
@@ -290,6 +295,7 @@
                 <div class="activityEntry">
 
                     <div id="w9"></div>
+                    </div>
                     <div class="feedbackEntry">
                         <p>Enter any feedback for this week below</p>
                         <textarea id="f9" cols="1" rows="7"></textarea>
@@ -522,7 +528,6 @@
                 var week = "week" + i;
                 var content = data[week].content;
                 var html =  Autolinker.link(content);
-                console.log(html);
                 $("#w" + i).html(html);
             }
             
