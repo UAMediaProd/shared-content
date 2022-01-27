@@ -2,6 +2,7 @@
 // Snippet for Canvas theme JS to inject an iFrame that can pass through the student, course and week data.
 // ==================================
 
+
 if ($('#injectionSite').length != 0) { //check to see if the div exists
 
     let userID = this.ENV.current_user_id; //grab the de-identified Canvas API ID for the user
