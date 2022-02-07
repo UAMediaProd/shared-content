@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Shared Content - Planning: Activity</title>
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+        }
+
+        a {
+            color: #d40000d9;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        h2 {
+            padding-left: unset !important;
+            border: 0 !important;
+            margin-top: 2em;
+        }
+
+        .adx-button {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .brand-midblue {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .adx-button.brand-midblue:hover {
+            background: #004c82 !important;
+        }
+
+        input,
+        textarea {
+            font-family: "Open Sans", sans-serif !important;
+            background: #FFF !important;
+        }
+
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 100%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+
+        }
+
+        .activityEntry {
+            padding: 2em;
+        }
+
+        .feedbackEntry {
+            color: #005a9c;
+            padding: 1rem;
+            font-size: 1rem;
+            background: #f3f4f5;
+            white-space: pre-line;
+        }
+
+        .milestone {
+            display: flex;
+            color: #fa6769;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2.5em;
+        }
+
+        .milestone .icon {
+            padding: 0 10px;
+            font-size: 1.2em;
+        }
+
+        .milestone .divider {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #fa6769;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+        }
+
+        .milestone .divider span {
+            background: #fff;
+            padding: 0 10px;
+
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        .week h4 {
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+            margin-bottom: -21px;
+            background: #ffffff;
+            z-index: 2;
+            position: relative;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        .swal2-html-container {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .swal2-styled.swal2-confirm {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .swal2-styled.swal2-confirm:focus {
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+
+        <h1 id="titleString">Project Planner</h1>
+
+        <div class="week">
+            <h4>Week 1</h4>
+            <div class="activity">
+
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a1" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f1"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 2</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a2" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f2"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 3</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a3" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f3"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 2: Literature Review is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 4</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a4" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f4"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 5</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a5" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f5"></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 3: Research Proposal is Due</span></div>
+        </div>
+
+
+
+        <div class="week">
+            <h4>Week 6</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a6" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f6"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 7</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a7" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f7"></p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="week">
+            <h4>Week 8</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a8" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f8"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 9</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a9" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f9"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 10</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a10" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f10"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 4: Analysis Presentation is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 11</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a11" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f11"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 12</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a12" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f12"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 5: Final Report is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 13</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a13" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f13"></p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 6: Project Presentation is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 14</h4>
+            <div class="activity">
+                <div class="activityEntry">
+                    <p><strong>Planning:</strong></p>
+                    <p>What are you planning to do this week to progress your research project? Plot key tasks.</p>
+                    <p><strong>Reporting:</strong></p>
+                    <p>What have you done this week? Log your progress including key achievements, delays, issues or
+                        questions.</p>
+
+                    <textarea id="a14" cols="1" rows="7"></textarea>
+                </div>
+                <div class="feedbackEntry">
+                    <p id="f14"></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 7: Learning Journey is Due</span></div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+
+
+
+
+
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="save()" style="position: fixed; bottom: 5%;">Save
+                Feedback</button>
+        </div>
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.3/Autolinker.min.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+        databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        authDomain: "shared-content-check-in.firebaseapp.com",
+        projectId: "shared-content-check-in",
+        storageBucket: "shared-content-check-in.appspot.com",
+        messagingSenderId: "419148697202",
+        appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+</script>
+<script>
+    // set yo variables 
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var userID = urlParams.get('student');
+    var course = urlParams.get('course');
+    var week = urlParams.get('week');
+
+    var selection, previousWeek, previousSelection, data;
+
+
+
+    $("textarea").on('focusout', function (e) {
+        console.log("unfocused!", e.target.id, e.target.value);
+
+        localStorage.setItem(e.target.id, e.target.value);
+        console.log(localStorage);
+    });
+
+
+
+
+    // functions
+    function showModal(type) {
+
+        Swal.fire(
+            'Plan saved',
+            'Your project plan has been successfully saved!',
+            'success'
+        )
+
+    }
+
+    function save() {
+
+        //clear answers from localStorage
+        for (var v = 1; v < 15; v++) {
+            var key = "a" + v;
+            var value = localStorage.removeItem(key);
+        }
+
+        console.log(localStorage);
+        console.log("Saving!");
+        createNewEntry();
+
+        selection = data;
+
+        // loop through the week text boxes and save them to selection
+        for (var i = 1; i <= 14; i++) {
+            selection["week" + i].content = document.getElementById("a" + i).value;
+
+        }
+
+        console.log(selection);
+
+        console.log("Saving!", course, userID, selection);
+
+        console.log(firebase.database());
+        firebase.database().ref('courses/' + course + '/' + userID + '/plan/').set(
+            selection
+        );
+
+        showModal("success");
+
+    }
+
+    function createNewEntry() {
+        console.log("creating a new entry!");
+        var newData = {
+            "week1": {
+                "content": "",
+            },
+            "week2": {
+                "content": "",
+            },
+            "week3": {
+                "content": "",
+            },
+            "week4": {
+                "content": "",
+            },
+            "week5": {
+                "content": "",
+            },
+            "week6": {
+                "content": "",
+            },
+            "week7": {
+                "content": "",
+            },
+            "week8": {
+                "content": "",
+            },
+            "week9": {
+                "content": "",
+            },
+            "week10": {
+                "content": "",
+            },
+            "week11": {
+                "content": "",
+            },
+            "week12": {
+                "content": "",
+            },
+            "week13": {
+                "content": "",
+            },
+            "week14": {
+                "content": "",
+            },
+            "feedback": {
+                "week1": {
+                    "feedback": "",
+                },
+                "week2": {
+                    "feedback": "",
+                },
+                "week3": {
+                    "feedback": "",
+                },
+                "week4": {
+                    "feedback": "",
+                },
+                "week5": {
+                    "feedback": "",
+                },
+                "week6": {
+                    "feedback": "",
+                },
+                "week7": {
+                    "feedback": "",
+                },
+                "week8": {
+                    "feedback": "",
+                },
+                "week9": {
+                    "feedback": "",
+                },
+                "week10": {
+                    "feedback": "",
+                },
+                "week11": {
+                    "feedback": "",
+                },
+                "week12": {
+                    "feedback": "",
+                },
+                "week13": {
+                    "feedback": "",
+                },
+                "week14": {
+                    "feedback": "",
+                },
+            }
+        };
+        console.log(newData);
+        return newData;
+
+    }
+
+    //operations
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+    if (course == null) {
+        course = "a-course";
+    }
+
+    if (userID == null) {
+        userID = "a-student";
+    }
+
+    // unlike the check-ins, we don't care about the week
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+
+    // get data from Firebase
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/');
+    userCourse.once('value').then(function (snapshot) {
+        data = snapshot.val();
+        console.log("inital data", data);
+
+        if (data == null) {
+            //nothing found, no entry at all
+            data = createNewEntry();
+        } else {
+
+
+            console.log("Found a course and a student");
+
+
+            //if there is content, load it into the text boxes; data is the object from the database
+            for (var i = 1; i <= 14; i++) {
+
+                document.getElementById("a" + i).value = data["week" + i].content;
+
+                //if there is feedback, load it into the feedback box
+                if (data.feedback["week" + i] != null || data.feedback["week" + i] != undefined) {
+                    if (data.feedback["week" + i].feedback != null) {
+                        var html = Autolinker.link(data.feedback["week" + i].feedback);
+                        console.log(html);
+                        document.getElementById("f" + i).innerHTML = html;
+                    }
+                }
+
+
+                //OVERRIDE: If there's something in the local storage, load that instead! It should only exist if someone wrote content but did not save it.
+                //Should we pop up a modal first and then use the local storage and if they confirm, they use the local storage?
+                if (localStorage.getItem("a1") != null || localStorage.getItem("a2") != null || localStorage
+                    .getItem("a3") != null || localStorage.getItem("a4") != null || localStorage.getItem(
+                    "a5") != null || localStorage.getItem("a6") != null || localStorage.getItem("a7") != null ||
+                    localStorage.getItem("a8") != null || localStorage.getItem("a9") != null || localStorage
+                    .getItem("a19") != null || localStorage.getItem("a11") != null || localStorage.getItem(
+                        "a12") != null || localStorage.getItem("a13") != null || localStorage.getItem("a14") !=
+                    null) {
+                    Swal.fire({
+                        text: 'Some unsaved changes have been detected, do you wish to continue from where you left off?',
+                        showDenyButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: 'Yes, continue',
+                        denyButtonText: `No, load my submitted information`,
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            console.log("Confirmed");
+                            for (var v = 1; v < 15; v++) {
+                                var key = "a" + v;
+                                var savedVal = localStorage.getItem(key);
+
+                                if(savedVal != null){
+                                    document.getElementById(key).value = savedVal;
+                                }
+                                
+                            }
+
+
+                        } else if (result.isDenied) {
+                            // load from the db, clear the local storage
+                            for (var v = 0; v < 15; v++) {
+                                var key = "a" + v;
+                                var value = localStorage.removeItem(key);
+                            }
+                        }
+                    })
+
+                }
+
+
+                
+            }
+
+
+
+        }
+    });
+</script>
+
+</html>

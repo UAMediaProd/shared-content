@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Shared Content - Reflection</title>
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+    <style>
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+        }
+
+        p, h1, h2, h3, h4, h5, h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .adx-button {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .brand-midblue {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .adx-button.brand-midblue:hover {
+            background: #004c82 !important;
+        }
+
+        input, textarea {
+            font-family: "Open Sans", sans-serif !important;
+            background: #FFF !important;
+        }
+
+  
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 90%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+        }
+        .activityEntry {
+            padding: 2em;
+        }
+        .feedbackEntry {
+            color: #005a9c;
+            padding: 1rem;
+            font-size: 1rem;
+            background: #f3f4f5;
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        h4 {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+
+            color: #B9C0C6;
+        }
+        .swal2-html-container {
+            font-family: "Open Sans", sans-serif !important;
+        }
+        .swal2-styled.swal2-confirm {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .swal2-styled.swal2-confirm:focus {
+            box-shadow: none !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+        
+        <h1 id="titleString">Reflection</h1>
+
+        
+        <div class="activity">
+            <div class="activityEntry">
+            <h4>What do you feel are your strengths, weaknesses, and needs in relation to this capstone project?</h4>
+            <p>Write at least one sentence for each. </p>
+
+            <h4>Where are you heading? What do you want to do next?  </h4>
+            <p>Consider your professional goals, gaps you may have still.  </p>
+
+            <h4>How can you use the 14 weeks of this final course to address these?</h4>
+            <p>Develop and identify your personal/professional aims in a short list or few sentences.  </p>
+
+            <h4>What would be your personal Course Learning Outcomes for this course? </h4>
+            <p>Write up a one liner in a similar style to those in this course. </p>
+
+            <h4>Can you use Goal Attainment Scaling to help you articulate your research project goals within this course?  </h4>
+            <p>If you are using this model to support you, record your notes here. </p>
+
+
+            <p id="info">Your answer to the previous check-in stage has been pre-filled for you below:</p>
+            <textarea id="a1" cols="10" rows="10"></textarea>
+        </div>
+            <div class="feedbackEntry">
+                <p><strong>Any feedback from your supervisor will be displayed below:</strong></p>
+                <p id="f1"></p>
+            </div>
+        </div>
+        
+
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="save()">Save answers</button>
+        </div>
+
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+        databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        authDomain: "shared-content-check-in.firebaseapp.com",
+        projectId: "shared-content-check-in",
+        storageBucket: "shared-content-check-in.appspot.com",
+        messagingSenderId: "419148697202",
+        appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+</script>
+<script>
+    // set yo variables 
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var userID = urlParams.get('student');
+    var course = urlParams.get('course');
+    var week = urlParams.get('week');
+    $("#titleString").text("Reflection for Week " + week);
+    var selection, previousWeek, previousSelection;
+
+    // functions
+    function showModal(type) {
+        Swal.fire(
+            'Reflection saved',
+            'Your reflection response has been successfully saved!',
+            'success'
+        )
+    }
+
+    function save() {
+        // get value from the textbox
+        selection.a1 = $("#a1").val();
+        firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week).set({
+            a1: selection.a1,
+            feedback: selection.feedback
+        });
+        showModal('success');
+    }
+
+    function createNewEntry() {
+        var newData = {
+            "a1": "",
+            "feedback": ""
+        };
+        return newData;
+
+    }
+
+    //operations
+    if (course == null) {
+        course = "a-course";
+    }
+
+    if (userID == null) {
+        userID = "a-student";
+    }
+
+    if (week == null) {
+        week = 1; //default to the first week for testing only
+    }
+
+    //hide the info prompt on week 1
+    if (week == 1) {
+        $("#info").css("display", "none");
+    }
+
+    // get previous week pointer
+    if (week == 6) {
+        previousWeek = 1;
+    } else if (week == 14) {
+        previousWeek = 6;
+    }
+
+    // get data from Firebase
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' + week);
+    userCourse.once('value').then(function (snapshot) {
+        var data = snapshot.val();
+      
+        if (data == null) {
+            //nothing found, no entry at all
+            data = createNewEntry();
+        } else {
+            selection = data;
+        }
+        var previous = firebase.database().ref('courses/' + course + '/' + userID + '/check-in/' +
+        previousWeek);
+        previous.once('value').then(function (snapshot) {
+            var prevData = snapshot.val();
+            selection = data;
+            if (prevData) {
+                if (selection.a1.length == 0) {
+                    selection.a1 = prevData.a1;
+                }
+            }
+            //display the questions and if there are any saved answers, show them too
+            $("#a1").val(selection["a1"]);
+            if (data.feedback != null) {
+                    document.getElementById("f1").innerHTML = data.feedback;
+                }
+
+            
+
+
+        })
+    });
+</script>
+
+</html>
