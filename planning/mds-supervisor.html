@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Shared Content - Planning: Supervisor View</title>
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+        }
+        a {
+            color: #d40000d9;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .adx-button {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .brand-midblue {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .adx-button.brand-midblue:hover {
+            background: #004c82 !important;
+        }
+
+        input,
+        textarea {
+            font-family: "Open Sans", sans-serif !important;
+            background: #FFF !important;
+            width: 98.5% !important;
+        }
+
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 100%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+
+        }
+
+        .activityEntry {
+            padding: 2em;
+            font-size: 16px;
+        }
+
+        .activityEntry > div {
+            white-space: pre-line;
+        }
+
+        .feedbackEntry {
+            color: #005a9c;
+            padding: 1rem;
+            font-size: 1rem;
+            background: #f3f4f5;
+        }
+
+
+
+        .milestone {
+            display: flex;
+            color: #fa6769;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2.5em;
+        }
+
+        .milestone .icon {
+            padding: 0 10px;
+            font-size: 1.2em;
+        }
+
+        .milestone .divider {
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #fa6769;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
+        }
+
+        .milestone .divider span {
+            background: #fff;
+            padding: 0 10px;
+
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        .week h4 {
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+            margin-bottom: -21px;
+            background: #ffffff;
+            z-index: 2;
+            position: relative;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        .swal2-html-container {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .swal2-styled.swal2-confirm {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .swal2-styled.swal2-confirm:focus {
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+
+        <h1 id="titleString">Planning</h1>
+        <p>Description of this tool and how to use it, etc etc</p>
+
+        <div class="week">
+            <h4>Week 1</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w1"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f1" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 2</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w2"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f2" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 3</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w3"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f3" cols="1" rows="7"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 2: Literature Review is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 4</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w4"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f4" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 5</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w5"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f5" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 3: Research Proposal is Due</span></div>
+        </div>
+
+
+        <div class="week">
+            <h4>Week 6</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w6"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f6" cols="1" rows="7"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 7</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w7"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f7" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+  
+
+        <div class="week">
+            <h4>Week 8</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w8"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f8" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 9</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w9"></div>
+                    </div>
+                    <div class="feedbackEntry">
+                        <p>Enter any feedback for this week below</p>
+                        <textarea id="f9" cols="1" rows="7"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 10</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w10"></div>
+
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f10" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 4: Analysis Presentation is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 11</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w11"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f11" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="week">
+            <h4>Week 12</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w12"></div>
+
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f12" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 5: Final Report is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 13</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w13"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f13" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 6: Project Presentation is Due</span></div>
+        </div>
+
+        <div class="week">
+            <h4>Week 14</h4>
+            <div class="activity">
+                <div class="activityEntry">
+
+                    <div id="w14"></div>
+                </div>
+                <div class="feedbackEntry">
+                    <p>Enter any feedback for this week below</p>
+                    <textarea id="f14" cols="1" rows="7"></textarea>
+                </div>
+
+            </div>
+        </div>
+        <div class="milestone">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <div class='divider'><span>Assignment 7: Learning Journey is Due</span></div>
+        </div>
+        <br/><br/><br/><br/><br/><br/>
+       
+
+
+
+
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="save()" style="position: fixed; bottom: 5%;">Save Feedback</button>
+        </div>
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autolinker/3.14.3/Autolinker.min.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBn1VLqtpd8A6YlA2eVl5P-VcFfiLUgTL8",
+        databaseURL: "https://shared-content-check-in-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        authDomain: "shared-content-check-in.firebaseapp.com",
+        projectId: "shared-content-check-in",
+        storageBucket: "shared-content-check-in.appspot.com",
+        messagingSenderId: "419148697202",
+        appId: "1:419148697202:web:ee4c43f58bbd11792dbceb"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase);
+</script>
+<script>
+    // set yo variables 
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var userID = urlParams.get('student');
+    var course = urlParams.get('course');
+    var week = urlParams.get('week');
+    var name = urlParams.get('name');
+
+    if (name != "null"){
+        $('#titleString').text(name + "'s Planning");
+    }
+
+
+    var selection, previousWeek, previousSelection, data;
+
+    // functions
+    function showModal(type) {
+
+        Swal.fire(
+            'Feedback saved',
+            'Your project plan feedback has been successfully saved!',
+            'success'
+        )
+
+    }
+
+    function save() {
+
+        console.log("Saving!");
+
+        //loop through the feedback boxes and push to selection array
+        selection = {};
+        for (var i = 1; i <= 14; i++) {
+            var feedback = document.getElementById("f" + i).value;
+            var obj = {
+                feedback: feedback,
+                hidden: false
+            }
+            selection["week" + i] = obj;
+
+        }
+        console.log(selection);
+
+        console.log("Saving!", course, userID, selection);
+        console.log(firebase.database());
+        firebase.database().ref('courses/' + course + '/' + userID + '/plan/feedback').set(
+            selection
+        );
+        showModal('success');
+
+
+
+
+    }
+
+
+    //operations
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+    if (course == null) {
+        course = "a-course";
+    }
+
+    if (userID == null) {
+        userID = "a-student";
+    }
+
+    // unlike the check-ins, we don't care about the week
+
+    console.log("userID", userID);
+    console.log("course", course);
+
+
+    // get data from Firebase
+    var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/');
+    userCourse.once('value').then(function (snapshot) {
+        data = snapshot.val();
+        console.log("inital data", data);
+
+        if (data == null) {
+            //nothing found, no entry at all; show an error?
+
+        } else {
+            console.log("Found a course and a student");
+
+            // update the UI with the answers from the student; `data` is the returned object from the database
+            for (var i = 1; i <= 14; i++) {
+                var week = "week" + i;
+                var content = data[week].content;
+                var html =  Autolinker.link(content);
+                $("#w" + i).html(html);
+            }
+            
+        }
+    });
+</script>
+
+</html>
