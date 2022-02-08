@@ -363,18 +363,6 @@
             $('#' + question).addClass('hidden');
         }
     });
-
-    function showContent(model) {
-        console.log(model);
-        if (model == 'surveyModel') {
-            $("#interviewModel").addClass('hidden');
-        } else {
-            $("#surveyModel").addClass('hidden');
-        }
-        $("#" + model).removeClass('hidden');
-    }
-
-
     function printPDF() {
         var opt = {
             margin: .4,
