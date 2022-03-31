@@ -529,6 +529,7 @@
                 var content = data[week].content;
                 var html =  Autolinker.link(content);
                 $("#w" + i).html(html);
+                $("#f" + i).val(data.feedback[week].feedback);
             }
             
         }
