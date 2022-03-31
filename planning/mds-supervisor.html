@@ -462,7 +462,7 @@
 
     function save() {
 
-        console.log("Saving!");
+
 
         //loop through the feedback boxes and push to selection array
         selection = {};
@@ -475,23 +475,15 @@
             selection["week" + i] = obj;
 
         }
-        console.log(selection);
 
-        console.log("Saving!", course, userID, selection);
-        console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/plan/feedback').set(
             selection
         );
         showModal('success');
-
-
     }
 
 
     //operations
-
-    console.log("userID", userID);
-    console.log("course", course);
 
     if (course == null) {
         course = "a-course";
@@ -501,20 +493,14 @@
         userID = "a-student";
     }
 
-    // unlike the check-ins, we don't care about the week
-
-    console.log("userID", userID);
-    console.log("course", course);
-
-
     // get data from Firebase
     var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/');
     userCourse.once('value').then(function (snapshot) {
         data = snapshot.val();
-        console.log("inital data", data);
 
         if (data == null) {
             //nothing found, no entry at all; show an error?
+            console.log("no data found");
 
         } else {
             console.log("Found a course and a student");
