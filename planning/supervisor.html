@@ -447,8 +447,6 @@
     if (name != "null"){
         $('#titleString').text(name + "'s Planning");
     }
-
-
     var selection, previousWeek, previousSelection, data;
 
     // functions
@@ -464,8 +462,6 @@
 
     function save() {
 
-        console.log("Saving!");
-
         //loop through the feedback boxes and push to selection array
         selection = {};
         for (var i = 1; i <= 14; i++) {
@@ -477,10 +473,6 @@
             selection["week" + i] = obj;
 
         }
-        console.log(selection);
-
-        console.log("Saving!", course, userID, selection);
-        console.log(firebase.database());
         firebase.database().ref('courses/' + course + '/' + userID + '/plan/feedback').set(
             selection
         );
@@ -491,12 +483,7 @@
 
     }
 
-
     //operations
-
-    console.log("userID", userID);
-    console.log("course", course);
-
     if (course == null) {
         course = "a-course";
     }
@@ -507,19 +494,15 @@
 
     // unlike the check-ins, we don't care about the week
 
-    console.log("userID", userID);
-    console.log("course", course);
 
 
     // get data from Firebase
     var userCourse = firebase.database().ref('courses/' + course + '/' + userID + '/plan/');
     userCourse.once('value').then(function (snapshot) {
         data = snapshot.val();
-        console.log("inital data", data);
-
         if (data == null) {
             //nothing found, no entry at all; show an error?
-
+            console.log("No data found");
         } else {
             console.log("Found a course and a student");
 
@@ -529,7 +512,7 @@
                 var content = data[week].content;
                 var html =  Autolinker.link(content);
                 $("#w" + i).html(html);
-                $("#f" + i).val(data.feedback[week].feedback);
+                $("#f" + i).val(data.feedback[week].feedback); //also pre-fill any existing feedback
             }
             
         }
