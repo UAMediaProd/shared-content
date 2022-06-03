@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply border-2 border-primary rounded py-2 px-4 my-auto text-primary font-semibold hover:bg-primary hover:text-white disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-primary;
+  }
+
+  .btn-primary-solid {
+    @apply rounded py-2 px-4 my-auto text-white font-semibold bg-primary hover:bg-primary-dark disabled:opacity-50 disabled:hover:bg-primary;
+  }
+
+  .btn-danger {
+    @apply border-2 border-secondary rounded py-2 px-4 my-auto text-secondary font-semibold hover:bg-secondary hover:text-white disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-secondary;
+  }
+
+  .btn-text-danger {
+    @apply py-2 px-4 my-auto border-0 text-secondary bg-transparent font-semibold hover:underline hover:text-secondary-dark;
+  }
+
+  .btn-nav {
+    @apply rounded py-1 px-3 text-sm border border-[#c7cdd1] bg-[#f5f5f5] hover:bg-[#e8e8e8]
+  }
+
+  .btn-sm {
+    @apply py-1 text-sm;
+  }
+
+  .modal {
+    @apply m-4 py-4 px-8 bg-white rounded min-w-[200px] max-w-[800px];
+  }
+
+  .modal-sm {
+    @apply min-w-[400px];
+  }
+
+  .modal-xl {
+    @apply min-w-[80%] max-w-[90%];
+  }
+
+  .popper {
+    @apply p-2 bg-white text-xs
+  }
+
+  .scaffold-popper {
+    @apply popper w-[350px]
+  }
+
+  .definition-popper {
+    @apply popper w-[250px]
+  }
+
+  .modules-popper {
+    @apply popper w-[170px]
+  }
+
+  .title-popper {
+    @apply popper w-[500px]
+  }
+}
