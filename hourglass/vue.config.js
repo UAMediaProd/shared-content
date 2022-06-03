@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === "production" ? "/shared-content/hourglass/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/shared-content/hourglass/dist/" : "/",
 })
