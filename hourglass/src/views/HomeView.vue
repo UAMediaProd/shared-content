@@ -3,7 +3,7 @@
     <div class="mb-auto">
       <div :class="wrapperClass">
         <!--        SVG START-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.87 474.58" width="500px">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.87 474.58" width="300px">
           <g id="base">
             <path
               class="cls-1"
@@ -984,11 +984,12 @@ svg {
 .clickable {
   fill: transparent;
   opacity: 0.5;
+  stroke: #FFF;
 }
 
 .clickable:hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  fill: #000;
+  fill: #FFF;
 }
 </style>

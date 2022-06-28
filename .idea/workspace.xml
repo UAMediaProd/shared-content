@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e94e3db2-a02f-4dc8-8475-5b49d7b126ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/checklists/week1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checklists/week2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checklists/week3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checklists/week4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checklists/week5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checklists/week6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/css/app.ce460b43.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hourglass/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/js/app.6b2f641c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/js/app.6b2f641c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/js/chunk-vendors.11c48feb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/dist/js/chunk-vendors.11c48feb.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hourglass/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/hourglass/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hourglass/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/hourglass/tailwind.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2BBKjv0Tj0JCPEeWWhmDOvOUfMX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/checklists" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/checklists" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e94e3db2-a02f-4dc8-8475-5b49d7b126ff" name="Changes" comment="" />
+      <created>1656374176723</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656374176723</updated>
+      <workItem from="1656374178483" duration="4860000" />
+      <workItem from="1656380037030" duration="1090000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
