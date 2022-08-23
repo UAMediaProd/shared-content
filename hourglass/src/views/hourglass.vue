@@ -2888,8 +2888,9 @@ svg {
 }
 .cls-25 {
   fill: #112535;
-  font-family: MADEEvolveSans-Bold, "MADE Evolve Sans";
+  font-family: "Made Evolve Sans",sans-serif;
   font-size: 17.89px;
+  font-weight: 700;
 }
 .cls-26 {
   letter-spacing: 0em;
