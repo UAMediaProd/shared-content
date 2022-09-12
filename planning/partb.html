@@ -558,11 +558,14 @@
 
         //if there is content, load it into the text boxes; data is the object from the database
         for (var i = 7; i <= 14; i++) {
-          document.getElementById("a" + i).value = data["week" + i].content;
+          if(data["week" + i] != undefined){
+            document.getElementById("a" + i).value = data["week" + i].content;
+          }
+          
 
           //if there is feedback, load it into the feedback box
           if (
-            data.feedback["week" + i] != null ||
+            data.feedback["week" + i] != null &&
             data.feedback["week" + i] != undefined
           ) {
             if (data.feedback["week" + i].feedback != null) {
