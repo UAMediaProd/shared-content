@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>MCY Ethics Checklist</title>
+    <link rel="icon" href="https://styleguide-v3.adelaide.edu.au/assets/img/icons/apple-touch-icon-144-precomposed.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://uamediaprod.github.io/uoa-styles/assets/theme.css" type="text/css" />
+    <style>
+        body main {
+            margin-left: auto;
+            margin-right: auto;
+            min-width: 30ch;
+            max-width: 150ch;
+            padding: 2vh 2vw;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        h2 {
+            margin-top: 2em;
+        }
+
+        label {
+            color: #102535 !important;
+            font-size: 0.8em !important;
+            font-weight: unset !important;
+        }
+
+        .adx-button {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .brand-midblue {
+            background: #005a9c !important;
+            color: #fff !important;
+        }
+
+        .adx-button.brand-midblue:hover {
+            background: #004c82 !important;
+        }
+
+        input,
+        textarea {
+            font-family: "Open Sans", sans-serif !important;
+            background: #FFF !important;
+        }
+
+
+
+        #info {
+            font-size: 0.8em;
+            font-style: italic;
+        }
+
+        .activity {
+            /* display: flex;
+            justify-content: space-between; */
+            width: 90%;
+            border-radius: 0.5ch;
+            border: 1px solid #d5d9dd;
+            box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+            margin-bottom: 2.5em;
+            padding: 2em;
+            margin: auto;
+        }
+
+        .centered {
+            justify-content: center;
+            display: flex;
+        }
+
+        h4 {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            margin-left: 1em;
+            color: #B9C0C6;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .warning {
+            display: block;
+            background: #fff6e9;
+            color: #303030;
+            font-size: unset;
+            padding: 1em;
+            margin-top: 1em;
+            font-weight: 400;
+        }
+
+        .warning .note {
+            color: #ffa423;
+            font-weight: 700;
+        }
+
+        .buttadx-container {
+            text-align: center;
+        }
+
+        @media print {
+            input[type="radio"]:checked+span {
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="adx">
+
+        <div id="ethicsPrint">
+            <h1>Project Feasibility and Research Integrity Checkpoint</h1>
+
+            <p>As you design your own research project, you will need to carefully scope and manage the project to ensure that it fits the feasibility constraints of the course and complies with relevant professional, ethical, and legal requirements and considerations. </p>
+
+
+                <p>Review the checklist below to help you with this.  </p>
+                
+            <p>You can export or print your completed checklist, as a reference to support your meetings with your supervisor, and to include as an Appendix in your Project Proposal assessment.   </p>
+
+            <h2>Project Feasibility Checklist</h2>
+
+            <form style="max-width: 80%; margin-top: 2em; margin-left: auto; margin-right: auto;">
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Is your project achievable within the course timeframe? Check the assessment deadlines carefully to see when each stage of your research will need to be completed. Are these smaller deadlines achievable for your planned project?
+                        <div class='hidden warning' id="feasQ1"><span class='note'>Warning:</span> You will need to
+                            consider
+                            how you can reframe the project. You could use this capstone as a precursor to a larger
+                            research
+                            project and use this opportunity to conduct a preliminary, exploratory, feasibility or pilot
+                            type study that is achievable in this time frame.</div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="feasQ1">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="feasQ1">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <div style="display:flex;gap: 20px;">
+                    <label style="margin-right: 2em;  width: 100%;">Is your project based on one of the approved general project options
+                        <div class='hidden warning' id="feasQ2"><div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                            <div style="margin-right: 2em;  width: 100%;">
+                                Is it a similar project (of equivalent scope, time, and workload, working with similar data, appropriate for a cyber security research project and cyber security program), modelled on the provided project options; AND have you discussed it with your supervisor? AND have you confirmed that there either are no legal, ethical, or access issues (i.e., regarding dataset/s and tools) or have you actioned/resolved them with the support of your supervisor and course coordinator?
+
+
+                                <div class='hidden warning' id="feasQ2a"><span class='note'>Warning:</span> Alternate projects must have the explicit approval of the supervisor and course coordinator.</div>
+                            </div>
+        
+                            <label class="adx-container">
+                                Yes
+                                <input type="radio" data-ans="yes" name="feasQ2a">
+                                <span class="radioMark"></span>
+                            </label>
+                            <label class="adx-container">
+                                No
+                                <input type="radio" data-ans="no" name="feasQ2a">
+                                <span class="radioMark"></span>
+                            </label>
+                        </div>
+                        
+                        
+                        </div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="feasQ2">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="feasQ2">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+            </form>
+            <h2>Research Integrity and Ethics</h2>
+            <p>Have you assessed your project against the University of Adelaide's 'negligible risk' criteria? Review the checklist and confirm that your proposed project does not present any risks that would necessitate formal ethics review and therefore project revision:   </p>
+            <form style="max-width: 80%; margin-top: 2em; margin-left: auto; margin-right: auto;">
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Have you confirmed that your proposed project does not present any risks that would necessitate formal ethics review and therefore project revision?
+                        <div class='hidden warning' id="sq1">
+
+                            <span class='note'>Warning:</span> If your planned project has any potential ethical issues, have you consulted with your supervisor about this to determine whether the project is feasible and what appropriate next steps need to be taken to mitigate such risks and amend the project? This is required.
+
+
+                        
+                        
+                        </div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq1">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq1">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <p>Are you aware of the:  </p>
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Australian Code for the Responsible Conduct of Research 2018?
+                        <div class='hidden warning' id="sq2"><span class='note'>Warning:</span> This is a requirement for the capstone project, and of you as a researcher.</div>
+                    </label>
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq2">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq2">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">University of Adelaide Responsible Conduct of Research Policy?
+                        <div class='hidden warning' id="sq3"><span class='note'>Warning:</span> This is a requirement for the capstone project, and of you as a researcher.</div>
+                    </label>
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq3">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq3">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">University of Adelaide Research Data and Primary Materials Policy?
+                        <div class='hidden warning' id="sq4"><span class='note'>Warning:</span> This is a requirement for the capstone project, and of you as a researcher.</div>
+                    </label>
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq4">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq4">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Are you confident that your proposed research design satisfies University of Adelaide research integrity requirements?
+                        <div class='hidden warning' id="sq5"><span class='note'>Warning:</span> This is a requirement for the capstone project, and of you as a researcher.</div>
+                    </label>
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq5">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq5">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Have you assessed your proposed project against relevant professional codes and ethical considerations that are specific to fields of cyber security and computer science?
+                        <div class='hidden warning' id="sq6"><span class='note'>Warning:</span> This is a requirement for the capstone project, and of you as a researcher.</div>
+                    </label>
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="sq6">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="sq6">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+            </form>
+
+
+            <h2>Legal Risk</h2>
+
+            <form style="max-width: 80%; margin-top: 2em; margin-left: auto; margin-right: auto;">
+
+                <!-- question block/row -->
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Have you assessed your project (including your plans for data collection, management, and analysis) against the relevant laws and regulations?
+                        <div class='hidden warning' id="legQ1"><span class='note'>Warning:</span> This is a requirement of the capstone project.</div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="legQ1">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="legQ1">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Does your project comply with all relevant laws and regulations?
+                        <div class='hidden warning' id="legQ2"><span class='note'>Warning:</span> You must comply with all relevant laws and regulations. If your planned project has any potential legal issues, or if you have any concerns, consult with your supervisor about this to determine whether the project is feasible and what appropriate next steps need to be taken to mitigate such risks and amend the project. This is required.</div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="legQ2">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="legQ2">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+                <div style="display:flex;gap: 20px;margin-bottom: 2em;">
+                    <label style="margin-right: 2em;  width: 100%;">Have you confirmed that your proposed project does not present any legal risks that would necessitate formal review by the University' s Legal and Risk team (and/or other stakeholders)?
+                        <div class='hidden warning' id="legQ3"><span class='note'>Warning:</span> You must assess your project for risk, and comply with the constraints of the capstone project, which specify minimal legal risk.</div>
+                    </label>
+
+                    <label class="adx-container">
+                        Yes
+                        <input type="radio" data-ans="yes" name="legQ3">
+                        <span class="radioMark"></span>
+                    </label>
+                    <label class="adx-container">
+                        No
+                        <input type="radio" data-ans="no" name="legQ3">
+                        <span class="radioMark"></span>
+                    </label>
+                </div>
+
+            </form>
+
+
+
+        </div>
+        <div class="centered">
+            <button class="adx-button brand-midblue" onclick="printPDF()">Save Checklist</button>
+        </div>
+
+    </main>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+
+<script>
+    // listen for radio button event
+    $('input[type=radio]').change(function (e) {
+        let answer = $(e.target).attr('data-ans');
+        let question = $(e.target).attr('name');
+        console.log(question, answer);
+
+        if (answer == 'no') {
+            $('#' + question).removeClass('hidden');
+        } else {
+            $('#' + question).addClass('hidden');
+        }
+    });
+    function printPDF() {
+        var opt = {
+            margin: .4,
+
+            html2canvas: {
+                scale: 3,
+                scrollY: 0
+            },
+            jsPDF: {
+                unit: 'in',
+                format: 'a4',
+                orientation: 'portrait'
+            }
+        };
+        var element = document.getElementById('ethicsPrint');
+        html2pdf().set(opt).from(element).save();
+
+
+    }
+</script>
+
+
+</html>
