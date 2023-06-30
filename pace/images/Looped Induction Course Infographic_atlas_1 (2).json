@@ -1,0 +1,235 @@
+﻿{"frames": {
+
+"V410Realitycheck":
+{
+	"frame": {"x":736,"y":517,"w":366,"h":262},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":262},
+	"sourceSize": {"w":366,"h":262}
+},
+"V411Reviewandrefine3":
+{
+	"frame": {"x":1104,"y":517,"w":366,"h":262},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":262},
+	"sourceSize": {"w":366,"h":262}
+},
+"V412Finalisecourse":
+{
+	"frame": {"x":1475,"y":0,"w":367,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":514},
+	"sourceSize": {"w":367,"h":514}
+},
+"V413Usertesting":
+{
+	"frame": {"x":1844,"y":0,"w":367,"h":514},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":514},
+	"sourceSize": {"w":367,"h":514}
+},
+"V414Handover":
+{
+	"frame": {"x":736,"y":0,"w":368,"h":515},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":368,"h":515},
+	"sourceSize": {"w":368,"h":515}
+},
+"V41Storyboarding_1":
+{
+	"frame": {"x":739,"y":781,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V42Preparecontent":
+{
+	"frame": {"x":369,"y":781,"w":368,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":368,"h":252},
+	"sourceSize": {"w":368,"h":252}
+},
+"V43Beginmediaproduction":
+{
+	"frame": {"x":0,"y":782,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V44Designassessments":
+{
+	"frame": {"x":1108,"y":782,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V45BuildPrototypes":
+{
+	"frame": {"x":0,"y":0,"w":366,"h":522},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":522},
+	"sourceSize": {"w":366,"h":522}
+},
+"V46Reviewandrefine1":
+{
+	"frame": {"x":2581,"y":762,"w":367,"h":255},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":255},
+	"sourceSize": {"w":367,"h":255}
+},
+"V47Buildcourse":
+{
+	"frame": {"x":0,"y":524,"w":367,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":256},
+	"sourceSize": {"w":367,"h":256}
+},
+"V48Reviewandrefine2":
+{
+	"frame": {"x":3685,"y":0,"w":366,"h":502},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":502},
+	"sourceSize": {"w":366,"h":502}
+},
+"V49Qualitycheck":
+{
+	"frame": {"x":3685,"y":504,"w":366,"h":502},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":502},
+	"sourceSize": {"w":366,"h":502}
+},
+"V4RVR10Realitycheck":
+{
+	"frame": {"x":1475,"y":516,"w":367,"h":264},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":264},
+	"sourceSize": {"w":367,"h":264}
+},
+"V4RVR11Reviewandrefine3":
+{
+	"frame": {"x":1844,"y":516,"w":367,"h":264},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":264},
+	"sourceSize": {"w":367,"h":264}
+},
+"V4RVR12Finalisecourse":
+{
+	"frame": {"x":1106,"y":0,"w":367,"h":515},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":515},
+	"sourceSize": {"w":367,"h":515}
+},
+"V4RVR13Usertesting":
+{
+	"frame": {"x":2581,"y":0,"w":364,"h":515},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":364,"h":515},
+	"sourceSize": {"w":364,"h":515}
+},
+"V4RVR14Handover":
+{
+	"frame": {"x":2213,"y":0,"w":366,"h":515},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":515},
+	"sourceSize": {"w":366,"h":515}
+},
+"V4RVR1Storyboarding":
+{
+	"frame": {"x":1477,"y":782,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V4RVR2Preparecontent":
+{
+	"frame": {"x":1846,"y":782,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V4RVR3Beginmediaproduction":
+{
+	"frame": {"x":3319,"y":1008,"w":367,"h":252},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":252},
+	"sourceSize": {"w":367,"h":252}
+},
+"V4RVR4Designassessments":
+{
+	"frame": {"x":2213,"y":517,"w":366,"h":257},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":257},
+	"sourceSize": {"w":366,"h":257}
+},
+"V4RVR5Buildprototypes":
+{
+	"frame": {"x":368,"y":0,"w":366,"h":522},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":366,"h":522},
+	"sourceSize": {"w":366,"h":522}
+},
+"V4RVR6Reviewandrefine1":
+{
+	"frame": {"x":2950,"y":762,"w":367,"h":255},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":255},
+	"sourceSize": {"w":367,"h":255}
+},
+"V4RVR7Buildcourse":
+{
+	"frame": {"x":2947,"y":505,"w":381,"h":255},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":381,"h":255},
+	"sourceSize": {"w":381,"h":255}
+},
+"V4RVR8Reviewandrefine2":
+{
+	"frame": {"x":2947,"y":0,"w":367,"h":503},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":503},
+	"sourceSize": {"w":367,"h":503}
+},
+"V4RVR9Qualitycheck":
+{
+	"frame": {"x":3316,"y":0,"w":367,"h":503},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":367,"h":503},
+	"sourceSize": {"w":367,"h":503}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.4.185",
+	"image": "Looped Induction Course Infographic_atlas_1.png",
+	"format": "undefined",
+	"size": {"w":4096,"h":2048},
+	"scale": "1"
+}
+}
